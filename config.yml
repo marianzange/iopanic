@@ -11,6 +11,6 @@ layoutdir: "layouts"
 publishdir: "public"
 indexes:
   category: "categories"
-baseurl: "http://iopanic.github.io/"
+baseurl: "https://marianzange.github.io/iopanic/"
 title: "iopanic"
 canonifyurls: true
