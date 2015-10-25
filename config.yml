@@ -1,7 +1,7 @@
 theme: "hugo-cactus-theme"
 params:
   name: "Marian Zange"
-  description: "Describe your website"
+  description: "Marian Zange's blog about about all kinds of things."
   bio: "I build software and study earth science."
   enableRSS: true
   copyright: |
