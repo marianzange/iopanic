@@ -3,7 +3,23 @@
   
   <url>
     <loc>http://iopanic.github.io/</loc>
+    <lastmod>2015-01-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://iopanic.github.io/posts/goodbye_ezeep/</loc>
+    <lastmod>2015-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://iopanic.github.io/posts/nsync/</loc>
+    <lastmod>2013-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://iopanic.github.io/posts/shaped_by_algorithms/</loc>
+    <lastmod>2013-07-18T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

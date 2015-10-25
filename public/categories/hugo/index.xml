@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on iopanic</title>
+    <link>http://localhost:1313/categories/hugo/</link>
+    <description>Recent content in Hugo on iopanic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 29 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Goodbye ezeep!</title>
+      <link>http://localhost:1313/posts/goodbye_ezeep/</link>
+      <pubDate>Sat, 29 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/goodbye_ezeep/</guid>
+      <description>
+
+&lt;h1 id=&#34;yolo:2b642f6da12224ceb1382890896acdd8&#34;&gt;YOLO&lt;/h1&gt;
+
+&lt;p&gt;For all of you who haven’t noticed yet, I’ve left ezeep at the end of December. As a co-founder it’s been a tough decision to leave, after joining forces with my two amazing co-founders nearly three years ago. Looking back, building ezeep was an incredible and fun challenge.&lt;/p&gt;
+
+&lt;p&gt;However, I started to feel that the direction ezeep is moving into and my own passions were drifting apart and that someone else would be able to fulfill the changed requirements much better than me. So back in summer (Northern hemisphere) I internally announced that I’d leave the company by the end of the year.&lt;/p&gt;
+
+&lt;p&gt;I’m writing this post from Wellington, New Zealand. I’ve moved to this wonderful country (at least for some time) to prepare for new challenges and opportunities ahead. I’ll post more about my upcoming plans and projects at the end of summer (Southern hemisphere).&lt;/p&gt;
+
+&lt;p&gt;For now it’s time to say goodbye and thank you to ‘team ezeep’ and everyone who’s been involved along the way. I’m very proud of what we’ve been able to achieve together.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
