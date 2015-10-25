@@ -25,7 +25,7 @@
     </item>
     
     <item>
-      <title>Introducing nsync - A command-line tool for NSA’s free backup services</title>
+      <title>nsync - A command-line tool for NSA’s backup services</title>
       <link>https://marianzange.github.io/iopanic/posts/nsync/</link>
       <pubDate>Sat, 24 Aug 2013 00:00:00 +0000</pubDate>
       
@@ -133,6 +133,18 @@ something open that actually improves people’s life and work.&lt;/p&gt;
 &lt;p&gt;I’m most certainly the last person who would start a movement against AI and advanced algorithm development because I believe in the basic principle of removing uncertainty and improving life through science and engineering. But still I want to raise awareness that the most powerful tools that directly shape how we act in real-life are proprietary black-boxes. This poses a great danger to society and every individual because predictions alter reality. Once Google or Foursquare tells you, that you most likely won’t enjoy a place, even if you end up going there, you will be prejudiced and act and experience in a different way.&lt;/p&gt;
 
 &lt;p&gt;It’s convenient to live in a highly abstracted world. Just keep in mind, that the more abstraction layers you add, the more you loose touch with the underlying problems. In life this means a black-boxed set of algorithms is channeling you through life. In engineering this means you’ll end up solving abstractions of abstractions while forgetting to address the actual problem.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Me. Commiting Code.</title>
+      <link>https://marianzange.github.io/iopanic/posts/commiting_code/</link>
+      <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://marianzange.github.io/iopanic/posts/commiting_code/</guid>
+      <description>&lt;p&gt;Cool, isn’t it? I stole the idea from Victor Martinez (&lt;a href=&#34;http://coderwall.com/p/xlatfq&#34;&gt;http://coderwall.com/p/xlatfq&lt;/a&gt;) who fully deserves the credit for me annoying the web with this video.&lt;/p&gt;
+
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;https://www.youtube.com/embed/u19_4GF0v5Q&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
 </description>
     </item>
     

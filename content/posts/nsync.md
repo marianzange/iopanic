@@ -1,5 +1,5 @@
 ---
-title: "Introducing nsync - A command-line tool for NSA’s free backup services"
+title: "nsync - A command-line tool for NSA’s backup services"
 date: "2013-08-24"
 description: "NSA is running the largest and most secure free backup service ever built. Still I couldn’t find any proper command-line backup tool to quickly compress and send my files to their service. So I’ve decided to introduce nsync."
 ---
