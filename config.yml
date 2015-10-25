@@ -1,8 +1,0 @@
-contentdir: "content"
-layoutdir: "layouts"
-publishdir: "public"
-indexes:
-  category: "categories"
-baseurl: "http://iopanic.github.io"
-title: "iopanic"
-canonifyurls: true
