@@ -1,6 +1,6 @@
 ---
 title: "How XEROX Invented (and Killed) Printing"
-date: "2013-07-18"
+date: "2013-08-13"
 description: "Technology has always shaped how we interact with the world and the people around us. Let’s start off with a very simple example: When the first bridges were built, the engineering part was a great achievement, but the idea of building a bridge is less about solving engineering problems just for the sake of solving them..."
 ---
 
