@@ -8,6 +8,8 @@ I study geoscience at <a href="http://www.tum.edu">Technical University of Munic
 Before joining TUM, I've co-founded several venture capital backed technology startups (the last one being ezeep). 
 Besides studying and building software, I'm co-founder of Crashpad, a co-living and co-working community for climbers and technologists.
 
-If you want to learn more about my vita, feel free to check out my LinkedIn profile.
+Sometimes, I write some blog posts on this site and I try to keep my collection of curated papers/books up-to-date.
+
+If you want to learn more about my vita, feel free to check out my LinkedIn profile or just google my name.
 
 <b>You can email me at <a href="mailto:marian.zange@tum.de"><b>marian.zange@tum.de</b></a></b>

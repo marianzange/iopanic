@@ -12,7 +12,7 @@ menu:
       - Name: "Interests"
         Identifier: "interests"
         URL: "/page/interests/"
-      - Name: "About Me"
+      - Name: "About"
         Identifier: "about-me"
         URL: "/page/about/"
 title: "iopanic"
