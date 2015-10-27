@@ -53,7 +53,9 @@
       <guid>http://www.iopanic.com/post/xerox_printing/</guid>
       <description>
 
-&lt;h1 id=&#34;losing-the-hackers:31950e35ecd470d63500f1ec324d548b&#34;&gt;Losing The Hackers&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;This article was originally published by me on the ezeep blog. Please note that ezeep, including it&amp;rsquo;s blog contents, has been acquired since then. Consequently this post might not appear on the ezeep blog anymore or might reference to a different author within ezeep&amp;rsquo;s new parent company.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;losing-the-hackers:31950e35ecd470d63500f1ec324d548b&#34;&gt;Losing The Hackers&lt;/h2&gt;
 
 &lt;p&gt;In the late 1970’s, Richard Stallman and his colleagues at the MIT Artificial Intelligence Lab were using one of the
 first XEROX Xerographic printers. The device was provided to the lab for free. Compared to current standards,
@@ -77,7 +79,7 @@ restrict its users. -– Stallman’s Law&lt;/p&gt;
 the place. You can read the whole story about Richard Stallman’s eye opening printer experience here:
 &lt;a href=&#34;http://oreilly.com/openbook/freedom/ch01.html&#34;&gt;http://oreilly.com/openbook/freedom/ch01.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;an-innovation-free-zone:31950e35ecd470d63500f1ec324d548b&#34;&gt;An Innovation-Free Zone&lt;/h1&gt;
+&lt;h2 id=&#34;an-innovation-free-zone:31950e35ecd470d63500f1ec324d548b&#34;&gt;An Innovation-Free Zone&lt;/h2&gt;
 
 &lt;p&gt;Stallman wrote his little paper jam notifier 30 years ago. Even today, printer status information for most devices is
 still notoriously unreliable. There hasn’t been a lot of innovation in printing since the early days. Because of its
@@ -91,7 +93,7 @@ Printing is a tool for exchanging, archiving, annotating and sharing information
 like e-books or tablets solve parts of the same problem. Each of those deal with a particular issue, but don’t address
 the same wide scope printing does. Interestingly, there’s barely any innovation coming out of the printing space itself.&lt;/p&gt;
 
-&lt;h1 id=&#34;breaking-the-rules:31950e35ecd470d63500f1ec324d548b&#34;&gt;Breaking the Rules&lt;/h1&gt;
+&lt;h2 id=&#34;breaking-the-rules:31950e35ecd470d63500f1ec324d548b&#34;&gt;Breaking the Rules&lt;/h2&gt;
 
 &lt;p&gt;At ezeep, we’re dealing with all the proprietary parts of printing every day and are in a constant battle to build an
 abstraction layer on top of those closed legacy systems. This turned out to be an incredibly hard challenge and made
@@ -149,26 +151,6 @@ something open that actually improves people’s life and work.&lt;/p&gt;
     </item>
     
     <item>
-      <title>About Me</title>
-      <link>http://www.iopanic.com/page/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.iopanic.com/page/about/</guid>
-      <description>
-
-&lt;h2 id=&#34;marian-zange:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Marian Zange&lt;/h2&gt;
-
-&lt;p&gt;I study geoscience at &lt;a href=&#34;http://www.tum.edu&#34;&gt;Technical University of Munich (TUM)&lt;/a&gt; and build software.
-Before joining TUM, I&amp;rsquo;ve co-founded several venture capital backed technology startups (the last one being ezeep).
-Besides studying and building software, I&amp;rsquo;m co-founder of Crashpad, a co-living and co-working community for climbers and technologists.&lt;/p&gt;
-
-&lt;p&gt;If you want to learn more about my vita, feel free to check out my LinkedIn profile.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;You can email me at &lt;a href=&#34;mailto:marian.zange@tum.de&#34;&gt;&lt;b&gt;marian.zange@tum.de&lt;/b&gt;&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Current areas of Interest</title>
       <link>http://www.iopanic.com/page/interests/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -212,6 +194,26 @@ Besides studying and building software, I&amp;rsquo;m co-founder of Crashpad, a 
 &lt;li&gt;Strube, M., &amp;amp; Ponzetto, S. P. (2006). WikiRelate! Computing semantic relatedness using Wikipedia. Aaai. &lt;a href=&#34;http://www.aaai.org/Papers/AAAI/2006/AAAI06-223.pdf&#34;&gt;http://www.aaai.org/Papers/AAAI/2006/AAAI06-223.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Li, T. J.-J., Sen, S., &amp;amp; Hecht, B. (2014). Leveraging advances in natural language processing to better understand Tobler&amp;rsquo;s first law of geography. the 22nd ACM SIGSPATIAL International Conference (pp. 513–516). New York, New York, USA: ACM. &lt;a href=&#34;http://doi.org/10.1145/2666310.2666493&#34;&gt;http://doi.org/10.1145/2666310.2666493&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>http://www.iopanic.com/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.iopanic.com/page/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;marian-zange:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Marian Zange&lt;/h2&gt;
+
+&lt;p&gt;I study geoscience at &lt;a href=&#34;http://www.tum.edu&#34;&gt;Technical University of Munich (TUM)&lt;/a&gt; and build software.
+Before joining TUM, I&amp;rsquo;ve co-founded several venture capital backed technology startups (the last one being ezeep).
+Besides studying and building software, I&amp;rsquo;m co-founder of Crashpad, a co-living and co-working community for climbers and technologists.&lt;/p&gt;
+
+&lt;p&gt;If you want to learn more about my vita, feel free to check out my LinkedIn profile.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;You can email me at &lt;a href=&#34;mailto:marian.zange@tum.de&#34;&gt;&lt;b&gt;marian.zange@tum.de&lt;/b&gt;&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
 </description>
     </item>
     

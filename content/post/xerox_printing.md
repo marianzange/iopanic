@@ -4,7 +4,9 @@ date: "2013-08-13"
 description: "Technology has always shaped how we interact with the world and the people around us. Let’s start off with a very simple example: When the first bridges were built, the engineering part was a great achievement, but the idea of building a bridge is less about solving engineering problems just for the sake of solving them..."
 ---
 
-# Losing The Hackers
+*This article was originally published by me on the ezeep blog. Please note that ezeep, including it's blog contents, has been acquired since then. Consequently this post might not appear on the ezeep blog anymore or might reference to a different author within ezeep's new parent company.*
+
+## Losing The Hackers
 
 In the late 1970’s, Richard Stallman and his colleagues at the MIT Artificial Intelligence Lab were using one of the 
 first XEROX Xerographic printers. The device was provided to the lab for free. Compared to current standards, 
@@ -26,7 +28,7 @@ XEROX is only an example for the whole industry. Look at HP, Samsung etc. and yo
 the place. You can read the whole story about Richard Stallman’s eye opening printer experience here: 
 http://oreilly.com/openbook/freedom/ch01.html
 
-# An Innovation-Free Zone
+## An Innovation-Free Zone
 
 Stallman wrote his little paper jam notifier 30 years ago. Even today, printer status information for most devices is 
 still notoriously unreliable. There hasn’t been a lot of innovation in printing since the early days. Because of its 
@@ -40,7 +42,7 @@ Printing is a tool for exchanging, archiving, annotating and sharing information
 like e-books or tablets solve parts of the same problem. Each of those deal with a particular issue, but don’t address 
 the same wide scope printing does. Interestingly, there’s barely any innovation coming out of the printing space itself.
 
-# Breaking the Rules
+## Breaking the Rules
 
 At ezeep, we’re dealing with all the proprietary parts of printing every day and are in a constant battle to build an 
 abstraction layer on top of those closed legacy systems. This turned out to be an incredibly hard challenge and made 
