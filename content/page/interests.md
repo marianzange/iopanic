@@ -25,7 +25,7 @@ Emerging from my software engineering background, I'm interested in decentralize
 
 ## Natural Language Processing
 
-NLP is a powerful tool to support research and understanding in a variety of other areas. My primary interest in this field is leveraging NLP techniques to better understand and proof connections and structures in other scientific fields.
+NLP is a powerful tool to support research and understanding in a variety of other areas. My primary interest in this field is leveraging NLP techniques to better understand and proof connections and structures. Currently I'm mostly looking into Semantic Relatedness.
  
 ### Papers
 
