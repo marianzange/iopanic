@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iopanic</title>
-    <link>https://marianzange.github.io/iopanic/</link>
-    <description>Recent content on iopanic</description>
+    <title>Posts on iopanic</title>
+    <link>https://marianzange.github.io/iopanic/post/</link>
+    <description>Recent content in Posts on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 13 Jan 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://marianzange.github.io/iopanic/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://marianzange.github.io/iopanic/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Goodbye ezeep!</title>
@@ -145,73 +145,6 @@ something open that actually improves people’s life and work.&lt;/p&gt;
       <description>&lt;p&gt;Cool, isn’t it? I stole the idea from Victor Martinez (&lt;a href=&#34;http://coderwall.com/p/xlatfq&#34;&gt;http://coderwall.com/p/xlatfq&lt;/a&gt;) who fully deserves the credit for me annoying the web with this video.&lt;/p&gt;
 
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;https://www.youtube.com/embed/u19_4GF0v5Q&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Current areas of Interest</title>
-      <link>https://marianzange.github.io/iopanic/page/interests/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://marianzange.github.io/iopanic/page/interests/</guid>
-      <description>
-
-&lt;p&gt;On this page you can get an overview about the areas I&amp;rsquo;m currently studying or working in. For each field, you can also find a curated list of interesting papers, books and research materials I&amp;rsquo;ve been reading.&lt;/p&gt;
-
-&lt;h2 id=&#34;geoscience:9ff85ae240172bb97ce520c762b5dcae&#34;&gt;Geoscience&lt;/h2&gt;
-
-&lt;p&gt;My new and currently primary field of studying, Geoscience with focus on Geology.&lt;/p&gt;
-
-&lt;h3 id=&#34;papers:9ff85ae240172bb97ce520c762b5dcae&#34;&gt;Papers&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Press, F., &amp;amp; Siever, R. (1995). Allgemeine Geologie. Spektrum Akademischer Verlag.&lt;/li&gt;
-&lt;li&gt;Okrusch, M., &amp;amp; Matthes, S. (2014). Mineralogie. Berlin, Heidelberg: Springer Berlin Heidelberg. &lt;a href=&#34;http://doi.org/10.1007/978-3-642-34660-6&#34;&gt;http://doi.org/10.1007/978-3-642-34660-6&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;geo-sensor-networks:9ff85ae240172bb97ce520c762b5dcae&#34;&gt;Geo Sensor Networks&lt;/h2&gt;
-
-&lt;p&gt;Emerging from my software engineering background, I&amp;rsquo;m interested in decentralized sensor networks to support data collection and processing for geological research and a variety of other applications.&lt;/p&gt;
-
-&lt;h3 id=&#34;papers-1:9ff85ae240172bb97ce520c762b5dcae&#34;&gt;Papers&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Duckham, M. (2013). Decentralized Spatial Computing. Berlin, Heidelberg: Springer. &lt;a href=&#34;http://doi.org/10.1007/978-3-642-30853-6&#34;&gt;http://doi.org/10.1007/978-3-642-30853-6&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Laube, P., Duckham, M., &amp;amp; Palaniswami, M. (2011). Deferred decentralized movement pattern mining for geosensor networks. International Journal of Geographical Information Science, 25(2), 273–292. &lt;a href=&#34;http://doi.org/10.1080/13658810903296630&#34;&gt;http://doi.org/10.1080/13658810903296630&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Resch, B. (n.d.). Integrated Urban Sensing: A Geo-sensor Network for Public Health Monitoring and Beyond. &lt;a href=&#34;http://dspace.mit.edu/openaccess-disseminate/1721.1/64636&#34;&gt;http://dspace.mit.edu/openaccess-disseminate/1721.1/64636&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;natural-language-processing:9ff85ae240172bb97ce520c762b5dcae&#34;&gt;Natural Language Processing&lt;/h2&gt;
-
-&lt;p&gt;NLP is a powerful tool to support research and understanding in a variety of other areas. My primary interest in this field is leveraging NLP techniques to better understand and proof connections and structures in other scientific fields.&lt;/p&gt;
-
-&lt;h3 id=&#34;papers-2:9ff85ae240172bb97ce520c762b5dcae&#34;&gt;Papers&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Gabrilovich, E., &amp;amp; Markovitch, S. (2007). Computing Semantic Relatedness Using Wikipedia-based Explicit Semantic Analysis. Ijcai.&lt;/li&gt;
-&lt;li&gt;Strube, M., &amp;amp; Ponzetto, S. P. (2006). WikiRelate! Computing semantic relatedness using Wikipedia. Aaai.&lt;/li&gt;
-&lt;li&gt;Li, T. J.-J., Sen, S., &amp;amp; Hecht, B. (2014). Leveraging advances in natural language processing to better understand Tobler&amp;rsquo;s first law of geography. the 22nd ACM SIGSPATIAL International Conference (pp. 513–516). New York, New York, USA: ACM. &lt;a href=&#34;http://doi.org/10.1145/2666310.2666493&#34;&gt;http://doi.org/10.1145/2666310.2666493&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://marianzange.github.io/iopanic/page/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://marianzange.github.io/iopanic/page/about/</guid>
-      <description>
-
-&lt;h2 id=&#34;marian-zange:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Marian Zange&lt;/h2&gt;
-
-&lt;p&gt;I study geoscience at &lt;a href=&#34;http://www.tum.edu&#34;&gt;Technical University of Munich (TUM)&lt;/a&gt; and build software.
-Before joining TUM, I&amp;rsquo;ve co-founded several venture capital backed technology startups (the last one being ezeep).
-Besides studying and building software, I&amp;rsquo;m co-founder of Crashpad, a co-living and co-working community for climbers and technologists.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve you want to learn more about my vita, feel free to check out my LinkedIn profile.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;You can email me at &lt;a href=&#34;mailto:marian.zange@tum.de&#34;&gt;&lt;b&gt;marian.zange@tum.de&lt;/b&gt;&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
 </description>
     </item>
     
