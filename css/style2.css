@@ -171,7 +171,6 @@ hr {
     color: #fff;
     font-weight: bold;
     font-size: 1em;
-    line-height: 30px;
     text-decoration: none;
 }
 
@@ -270,7 +269,7 @@ ul.li-article-list {
 }
 
 .li-main-article-list {
-    margin-top: 40px;
+    margin-top: 128px;
 }
 
 /** Mobile Portrait (320px) **************************************************/
