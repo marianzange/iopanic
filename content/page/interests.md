@@ -12,6 +12,8 @@ My new and currently primary field of studying, Geoscience with focus on Geology
 
 * Press, F., & Siever, R. (1995). Allgemeine Geologie. Spektrum Akademischer Verlag. http://books.google.de/books?id=31QxAAAACAAJ
 * Okrusch, M., & Matthes, S. (2014). Mineralogie. Berlin, Heidelberg: Springer Berlin Heidelberg. http://doi.org/10.1007/978-3-642-34660-6
+* de Lange, N. (2013). Geoinformatik (3rd ed.). Berlin, Heidelberg: Springer Berlin Heidelberg. http://doi.org/10.1007/978-3-642-34807-5
+* Zhu, X. (2014). Computational Intelligence Techniques in Earth and Environmental Sciences. (T. Islam, P. K. Srivastava, M. Gupta, X. Zhu, & S. Mukherjee, Eds.). Dordrecht: Springer Netherlands. http://doi.org/10.1007/978-94-017-8642-3
 
 ## Geo Sensor Networks
 
@@ -22,6 +24,7 @@ Emerging from my software engineering background, I'm interested in decentralize
 * Duckham, M. (2013). Decentralized Spatial Computing. Berlin, Heidelberg: Springer. http://doi.org/10.1007/978-3-642-30853-6
 * Laube, P., Duckham, M., & Palaniswami, M. (2011). Deferred decentralized movement pattern mining for geosensor networks. International Journal of Geographical Information Science, 25(2), 273–292. http://doi.org/10.1080/13658810903296630
 * Resch, B. (n.d.). Integrated Urban Sensing: A Geo-sensor Network for Public Health Monitoring and Beyond. http://dspace.mit.edu/openaccess-disseminate/1721.1/64636
+* Hightower, J., & Borriello, G. (2001). Location systems for ubiquitous computing. Computer, 34(8), 57–66. http://doi.org/10.1109/2.940014
 
 ## Natural Language Processing
 
