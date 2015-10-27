@@ -149,6 +149,26 @@ something open that actually improves people’s life and work.&lt;/p&gt;
     </item>
     
     <item>
+      <title>About Me</title>
+      <link>http://www.iopanic.com/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.iopanic.com/page/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;marian-zange:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Marian Zange&lt;/h2&gt;
+
+&lt;p&gt;I study geoscience at &lt;a href=&#34;http://www.tum.edu&#34;&gt;Technical University of Munich (TUM)&lt;/a&gt; and build software.
+Before joining TUM, I&amp;rsquo;ve co-founded several venture capital backed technology startups (the last one being ezeep).
+Besides studying and building software, I&amp;rsquo;m co-founder of Crashpad, a co-living and co-working community for climbers and technologists.&lt;/p&gt;
+
+&lt;p&gt;If you want to learn more about my vita, feel free to check out my LinkedIn profile.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;You can email me at &lt;a href=&#34;mailto:marian.zange@tum.de&#34;&gt;&lt;b&gt;marian.zange@tum.de&lt;/b&gt;&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Current areas of Interest</title>
       <link>http://www.iopanic.com/page/interests/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -183,7 +203,7 @@ something open that actually improves people’s life and work.&lt;/p&gt;
 
 &lt;h2 id=&#34;natural-language-processing:9ff85ae240172bb97ce520c762b5dcae&#34;&gt;Natural Language Processing&lt;/h2&gt;
 
-&lt;p&gt;NLP is a powerful tool to support research and understanding in a variety of other areas. My primary interest in this field is leveraging NLP techniques to better understand and proof connections and structures in other scientific fields.&lt;/p&gt;
+&lt;p&gt;NLP is a powerful tool to support research and understanding in a variety of other areas. My primary interest in this field is leveraging NLP techniques to better understand and proof connections and structures. Currently I&amp;rsquo;m mostly looking into Semantic Relatedness.&lt;/p&gt;
 
 &lt;h3 id=&#34;papers-2:9ff85ae240172bb97ce520c762b5dcae&#34;&gt;Papers&lt;/h3&gt;
 
@@ -192,26 +212,6 @@ something open that actually improves people’s life and work.&lt;/p&gt;
 &lt;li&gt;Strube, M., &amp;amp; Ponzetto, S. P. (2006). WikiRelate! Computing semantic relatedness using Wikipedia. Aaai. &lt;a href=&#34;http://www.aaai.org/Papers/AAAI/2006/AAAI06-223.pdf&#34;&gt;http://www.aaai.org/Papers/AAAI/2006/AAAI06-223.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Li, T. J.-J., Sen, S., &amp;amp; Hecht, B. (2014). Leveraging advances in natural language processing to better understand Tobler&amp;rsquo;s first law of geography. the 22nd ACM SIGSPATIAL International Conference (pp. 513–516). New York, New York, USA: ACM. &lt;a href=&#34;http://doi.org/10.1145/2666310.2666493&#34;&gt;http://doi.org/10.1145/2666310.2666493&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>http://www.iopanic.com/page/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.iopanic.com/page/about/</guid>
-      <description>
-
-&lt;h2 id=&#34;marian-zange:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Marian Zange&lt;/h2&gt;
-
-&lt;p&gt;I study geoscience at &lt;a href=&#34;http://www.tum.edu&#34;&gt;Technical University of Munich (TUM)&lt;/a&gt; and build software.
-Before joining TUM, I&amp;rsquo;ve co-founded several venture capital backed technology startups (the last one being ezeep).
-Besides studying and building software, I&amp;rsquo;m co-founder of Crashpad, a co-living and co-working community for climbers and technologists.&lt;/p&gt;
-
-&lt;p&gt;If you want to learn more about my vita, feel free to check out my LinkedIn profile.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;You can email me at &lt;a href=&#34;mailto:marian.zange@tum.de&#34;&gt;&lt;b&gt;marian.zange@tum.de&lt;/b&gt;&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
 </description>
     </item>
     
