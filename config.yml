@@ -12,5 +12,13 @@ publishdir: "public"
 indexes:
   category: "categories"
 baseurl: "https://marianzange.github.io/iopanic/"
+menu:
+  main:
+      - Name: "Interests"
+        Identifier: "interests"
+        URL: "/page/interests/"
+      - Name: "About Me"
+        Identifier: "about-me"
+        URL: "/page/about/"
 title: "iopanic"
 canonifyurls: true
