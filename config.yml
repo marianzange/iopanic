@@ -1,4 +1,4 @@
-theme: "hugo-cactus-theme"
+theme: "liquorice"
 params:
   name: "Marian Zange"
   description: "Marian Zange's blog about about all kinds of things."
