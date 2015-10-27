@@ -1,11 +1,6 @@
 theme: "liquorice"
 params:
-  name: "Marian Zange"
-  description: "Marian Zange's blog about about all kinds of things."
-  bio: "I build software and study earth science."
   enableRSS: true
-  copyright: |
-             This blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons BY-NC 4.0 License</a>.
 contentdir: "content"
 layoutdir: "layouts"
 publishdir: "public"
