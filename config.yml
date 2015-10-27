@@ -11,7 +11,7 @@ layoutdir: "layouts"
 publishdir: "public"
 indexes:
   category: "categories"
-baseurl: "https://marianzange.github.io/iopanic/"
+baseurl: "http://www.iopanic.com/"
 menu:
   main:
       - Name: "Interests"

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Complex Systems on iopanic</title>
-    <link>https://marianzange.github.io/iopanic/categories/complex-systems/</link>
+    <link>http://www.iopanic.com/categories/complex-systems/</link>
     <description>Recent content in Complex Systems on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 18 Jul 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://marianzange.github.io/iopanic/categories/complex-systems/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.iopanic.com/categories/complex-systems/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>You’re Shaped By Algorithms</title>
-      <link>https://marianzange.github.io/iopanic/post/shaped_by_algorithms/</link>
+      <link>http://www.iopanic.com/post/shaped_by_algorithms/</link>
       <pubDate>Thu, 18 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://marianzange.github.io/iopanic/post/shaped_by_algorithms/</guid>
+      <guid>http://www.iopanic.com/post/shaped_by_algorithms/</guid>
       <description>
 
 &lt;h2 id=&#34;gaining-certainty-through-abstraction:f532d64bf099fee510d5d95af99bf4f3&#34;&gt;Gaining Certainty Through Abstraction&lt;/h2&gt;

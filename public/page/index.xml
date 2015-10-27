@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on iopanic</title>
-    <link>https://marianzange.github.io/iopanic/page/</link>
+    <link>http://www.iopanic.com/page/</link>
     <description>Recent content in Pages on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <atom:link href="https://marianzange.github.io/iopanic/page/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.iopanic.com/page/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About Me</title>
-      <link>https://marianzange.github.io/iopanic/page/about/</link>
+      <link>http://www.iopanic.com/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://marianzange.github.io/iopanic/page/about/</guid>
+      <guid>http://www.iopanic.com/page/about/</guid>
       <description>
 
 &lt;h2 id=&#34;marian-zange:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Marian Zange&lt;/h2&gt;
@@ -29,10 +29,10 @@ Besides studying and building software, I&amp;rsquo;m co-founder of Crashpad, a 
     
     <item>
       <title>Current areas of Interest</title>
-      <link>https://marianzange.github.io/iopanic/page/interests/</link>
+      <link>http://www.iopanic.com/page/interests/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://marianzange.github.io/iopanic/page/interests/</guid>
+      <guid>http://www.iopanic.com/page/interests/</guid>
       <description>
 
 &lt;p&gt;On this page you can get an overview about the areas I&amp;rsquo;m currently studying or working in. For each field, you can also find a curated list of interesting papers, books and research materials I&amp;rsquo;ve been reading.&lt;/p&gt;
