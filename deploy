@@ -17,4 +17,5 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin master
+cp CNAME ./public/CNAME
 git subtree push --prefix=public git@github.com:marianzange/iopanic.git gh-pages
