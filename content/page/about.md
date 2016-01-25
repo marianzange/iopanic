@@ -4,11 +4,11 @@ title = "About Me"
 
 ## Marian Zange
 
-I study geoscience at <a href="http://www.tum.edu">Technical University of Munich (TUM)</a> and build software. 
-Before joining TUM, I've co-founded several venture capital backed technology startups (the last one being ezeep). 
-Besides studying and building software, I'm co-founder of Crashpad, a co-living and co-working community for climbers and technologists.
-
-Sometimes, I write some blog posts on this site and I try to keep my collection of curated papers/books up-to-date.
+I study geoscience and physics at <a href="http://www.tum.edu">Technical University of Munich (TUM)</a> 
+and <a href="http://www.uni-muenchen.de">Ludwig-Maximilans University (LMU)</a>. 
+Before going back to university to have fun with physics, I've co-founded several venture capital backed technology startups (the last one being ezeep). 
+Besides studying I'm a freelance software engineer and technical product lead and 
+co-founder of Crashpad, a co-living and co-working community for climbers and technologists.
 
 If you want to learn more about my vita, feel free to check out my LinkedIn profile or just google my name.
 
