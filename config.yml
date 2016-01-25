@@ -10,9 +10,6 @@ indexes:
 baseurl: "http://www.iopanic.com/"
 menu:
   main:
-      - Name: "Interests"
-        Identifier: "interests"
-        URL: "/page/interests/"
       - Name: "About"
         Identifier: "about-me"
         URL: "/page/about/"
