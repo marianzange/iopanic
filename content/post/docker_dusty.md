@@ -2,6 +2,11 @@
 title: "Get your sh*t together: Docker development environments with Dusty"
 date: "2016-01-28"
 description: "This article will give you an overview how you can use Docker and Dusty to streamline your dev environments."
+categories:
+  - "Software Engineering"
+tags:
+  - "Devops"
+  - "Docker"
 ---
 
 I've seen hell, when it comes to software development and actual production environments. Inconsitent platforms, packages and a plethora of hacks to 'get everything to work' on all developer machines. I've seen whole teams screwing with a shared 'dev database' on a root server somewhere, creating a horrible mess of inconsistent behavior and ultimately slow down development and testing. This article will give you an overview how you can use Docker and Dusty to streamline your dev environments.
