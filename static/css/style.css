@@ -42,7 +42,7 @@ hr {
 }
 
 p > img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .li-right {
@@ -164,7 +164,7 @@ p > img {
 .li-page-header ul li a:active,
 .li-page-header ul li a:hover,
 .li-page-header ul li a:visited {
-    color: #999;
+    color: #5890ff;
     font-weight: normal;
     text-decoration: none;
     font-size: 0.9em;
@@ -197,14 +197,15 @@ p > img {
 
 a,
 a:visited {
-    color: #CD0070;
+    color: #5890ff;
     font-weight: normal;
     text-decoration: none;
 }
 
 a:hover,
 a:active {
-    color: #FF0DAD;
+    color: #3e70d1;
+	text-decoration: underline;
     font-weight: normal;
 }
 
