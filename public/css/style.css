@@ -200,18 +200,22 @@ a:visited {
     color: #5890ff;
     font-weight: normal;
     text-decoration: none;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
 }
 
-a:hover,
-a:active {
-    color: #3e70d1;
-	text-decoration: underline;
+a:hover {
+    color: #2d4dd1;
     font-weight: normal;
 }
 
 /** Article *****************************************************************/
 .li-article {
     margin-bottom: 32px;
+}
+
+.li-article-centered {
+    text-align: center;
 }
 
 .li-article pre {
