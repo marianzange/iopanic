@@ -2,7 +2,7 @@
 title = "Hello, I'm Marian."
 +++
 
-Sometimes I draw strange things on my whiteboard. But that's ok.
+My cat looks something like this. Or maybe it doesn't. Who knows...
 
 ![Schroedinger's cat feeding on top quarks](/images/particle_disposal.jpg)
 
