@@ -5,8 +5,32 @@
     <link>http://www.iopanic.com/</link>
     <description>Recent content on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 28 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Feb 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.iopanic.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Applied Curiosity</title>
+      <link>http://www.iopanic.com/post/applied_curiosity/</link>
+      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.iopanic.com/post/applied_curiosity/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://imgs.xkcd.com/comics/questions.png&#34; alt=&#34;Questions&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As a kid, you probably looked at things and often asked yourself: Why? Why does my water pistol transform this lazy thing called water into a pressurized stream I can aim at my cat? And why is my cat not enjoying the free shower? When we look at the physical world, we see amazing things all the time. Laws of nature are repeatable. Everything we do is based on the understanding that a natural law is applicable anywhere in our universe.&lt;/p&gt;
+
+&lt;p&gt;After we internalized these laws, we derive expectated outcomes whenever we see something that resembles a learned experience. But obviously there&amp;rsquo;s an error margin in the whole process. Consequently we just brush over most of the nuances and hidden variables, look at the expected (+/- error margin) and actual result, compare them, maybe adjust a bit - or not - and move on to the next thing.&lt;/p&gt;
+
+&lt;p&gt;But aren&amp;rsquo;t we missing something? Where is the excitement when your expensive BMW is figuring out that the car in front of you is not moving and exactly occupying the spot where you will be in 1s? Or when you look at the map on your 17&amp;rdquo; first class video screen, are you asking yourself why on earth none of the aircrafts ever seems to go in a straight line on longer distances?&lt;/p&gt;
+
+&lt;p&gt;Curiosity is what drives us. As kids we&amp;rsquo;re most curious because there&amp;rsquo;s just so many things we can&amp;rsquo;t pattern match yet. But what happens in school? We get hammered with all kinds of school book knowledge which is essentially nothing else than a text book way of feeding your brain with &amp;ldquo;If X then Y&amp;rdquo; statements. This is fundamentally wrong.&lt;/p&gt;
+
+&lt;p&gt;We need opportunities to ask questions and systems to stay curious beyond the childhood. Our school system and many families are horrible when it comes to teaching kids to ask questions. Most of the classes are occupied with teachers directing questions at students. It should be the other way round. Parents and the education system should open a window to the world and the universe. If they do, I&amp;rsquo;m almost certain that kids will start trying to understand the things they perceive on their own.&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;____&lt;/p&gt;
+
+&lt;p&gt;Picture from &lt;a href=&#34;http://xkcd.com&#34;&gt;http://xkcd.com&lt;/a&gt; by Randall Munroe. Creative Commons Attribution-NonCommercial 2.5 License. &lt;/small&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Get your sh*t together: Docker development environments with Dusty</title>
