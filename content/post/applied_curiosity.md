@@ -21,6 +21,12 @@ Curiosity is what drives us. As kids we're most curious because there's just so 
 
 We need opportunities to ask questions and systems to stay curious beyond the childhood. Our school system and many families are horrible when it comes to teaching kids to ask questions. Most of the classes are occupied with teachers directing questions at students. It should be the other way round. Parents and the education system should open a window to the world and the universe. If they do, I'm almost certain that kids will start trying to understand the things they perceive on their own.
 
+## Update - 07 March 2016
+
+Nautilus Magazine recently published an interesting article on curiosity and how it's emerging from what we already know. Certainly worth reading: http://nautil.us/issue/33/attraction/curiosity-depends-on-what-you-already-know
+
+
+
 <small>____
 
 Picture from http://xkcd.com by Randall Munroe. Creative Commons Attribution-NonCommercial 2.5 License. </small>
