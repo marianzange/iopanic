@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>Five Hops To Hitler &middot; iopanic</title>
+  <link rel="stylesheet" href="http://www.iopanic.com//libraries/normalize.3.0.1.css" />
+
+  <link rel="stylesheet" href="http://www.iopanic.com/css/style.css">
+  <link rel="shortcut icon" href="http://www.iopanic.com/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" href="http://www.iopanic.com/apple-touch-icon-144-precomposed.png" sizes="144x144" />
+  <link rel="alternate" href="" type="application/rss+xml" title="iopanic" />
+</head>
+<body class="li-body">
+<header class="li-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="sixteen columns">
+        <div class="li-brand li-left">
+          <a href="http://www.iopanic.com/">I/O PANIC</a></div>
+        <div class="li-menu li-right">
+          <span class="li-menu-icon" onclick="javascript:toggle('menu');">&#9776;</span>
+          <ul id="menu2" class="li-menu-items">
+            
+            <li><a href="http://www.iopanic.com/page/about/"> About </a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="sixteen columns">
+        <ul id="menu" class="li-menu-items li-menu-mobile">
+          
+          <li><a href="http://www.iopanic.com/page/about/"> About </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="sixteen columns">
+      <article class="li-article">
+        <header class="li-article-header">
+          <h1 class="li-article-title">Five Hops To Hitler</h1>
+                        <span class="li-article-taxonomies">
+                            
+                                Posted in
+                                
+                                    <a href="http://www.iopanic.com/categories/graph-theory">Graph Theory</a>
+                                
+                                    <a href="http://www.iopanic.com/categories/research">Research</a>
+                                
+                            
+                        </span>
+           - 
+          <time class="li-article-date">Tuesday, March 15, 2016</time>
+        </header>
+        <section>
+          
+
+<p><strong>According to a fellow student, a general assumption exists, stating that almost no article on Wikipedia is more than five degrees seperated from the article about Adolf Hitler. To verify this assumption, I have analyzed the German Wikipedia and computed the shortest distance between all vertices and the vertex representing the article about Adolf Hitler. The result shows that 97.1% of all articles have a path length of ≤ 5.</strong></p>
+
+<h2 id="i-introduction:c23c9cf43b45a68cbbc5c25f0c2247fc">I. Introduction</h2>
+
+<blockquote>
+<p>’No Wikipedia article is more than five degrees seperated from the article about Hitler.’
+– Diana</p>
+</blockquote>
+
+<p>This hypotheses was mentioned by my fellow student Diana during lunch at the TUM cafeteria. Remembering the ’Six Degrees of Seperation’ [1] and the ’Bacon Number’ [2], it sparked my interest in finding evidence for or against her statement.</p>
+
+<p>To simplify computation, for this study I’ve reduced the dataset to article names and ingoing and outgoing internal links. Based on this extremely flat, but broad information structure we can already start answering some interesting questions when it comes to relatedness and importance of articles from the corpus.</p>
+
+<p>We can for example compute the indegrees and outdegrees of nodes we’re interested in or determine the shortest path between nodes. To find evidence for the stated hypotheses, I’ve looked at the shortest path from all vertices in the graph to the vertex representing the article about ’Adolf Hitler’.</p>
+
+<h2 id="ii-data-and-methods:c23c9cf43b45a68cbbc5c25f0c2247fc">II. Data and Methods</h2>
+
+<p>Wikipedia itself is a conceptually perfect source to answer questions like ’How far away is X from Y?’. The concept of distance can be treated in different ways. One of the simplest ways is to treat the corpus of articles as an unweighted, directed graph structure. The vertices in our graph represent the articles and internal links are represented by the directed edges in between. The direction of edges follows the direction of hyperlinks.</p>
+
+<h3 id="a-dataset:c23c9cf43b45a68cbbc5c25f0c2247fc">A. Dataset</h3>
+
+<p>I’ve conducted the evaluation on the German edition Wikipedia as of December 2015. The dataset was acquired from a Wikipedia full <a href="https://dumps.wikimedia.org/dewiki/20151201/dewiki-20151201-pages- articles.xml.bz2">article dump</a> and post processed with <a href="https://github.com/mirkonasato/graphipedia">Graphipedia</a>, a tool to prepare Wikipedia dumps for import into a <a href="http://www.neo4j.com">Neo4j</a> database.</p>
+
+<p>The imported dataset contains 3,169,885 pages connected by 48,993,269 links. 6,466,688 broken links have been removed before and are not included in the tested dataset.</p>
+
+<h3 id="b-computation:c23c9cf43b45a68cbbc5c25f0c2247fc">B. Computation</h3>
+
+<p>For computing the results, Neo4j, a database designed for storing and querying graph structures has been used. Neo4j implements it’s own shortest path algorithm. The following query was used to compute the results.</p>
+
+<pre><code>MATCH (a:Page), (b:Page {title:’Adolf Hitler’}), p=shortestPath ((a)−[*..15]−&gt;(b))
+RETURN size(nodes(p)), count(*);
+</code></pre>
+
+<p>Neo4j uses a Breadth-first search (BFS) algorithm to determine the shortest path when analyzing a directed, unweighted graph. BFS has a worst-case runtime complexity of <code>O(V + E)</code> Where V is the total number of vertices and E is the total number of edges. The BFS for this study was configured to not include &#8467; &gt; 14.</p>
+
+<h2 id="iii-results:c23c9cf43b45a68cbbc5c25f0c2247fc">III. Results</h2>
+
+<p>From the total of 3,169,885 vertices, 97.1% have &#8467; ≤ 5 to reach the article about ’Adolf Hitler’. For distribution see the following figures.</p>
+
+<p><img src="http://www.iopanic.com/images/posts/hops.png" alt="distribution" /></p>
+
+<table>
+    <tr>
+        <td>Path length &#8467;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>Vertices V(&#8467;)</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>7,139</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>805,640</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>1,596,007</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>648,934</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>20,357</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>189</td>
+    </tr>
+</table>
+
+<h2 id="iv-conclusion:c23c9cf43b45a68cbbc5c25f0c2247fc">IV. Conclusion</h2>
+
+<p>The resulting numbers show, that 97.1% of German Wikipedia articles are less than 6 hops away from the article about ’Adolf Hitler’. Therefore we can conclude that the stated hypothesis is confirmed and the ’urban myth’ can be considered a fact.</p>
+
+<p>Further interesting questions around this topic can be certainly asked. Especially since we’re looking at topic that’s culturally extremely relevant for the community that created and maintains the analyzed Wikipedia corpus, it might be of interest to compare results with Wikipedia editions in other languages.</p>
+
+<p><small>____</p>
+
+<p>[1] J. Guare, Six Degrees of Separation: A Play, Vintage Books, New York, 1990.<br/>
+[2] A. Ruthven, (April 7, 1994). Kevin Bacon is the Center of the Universe. <a href="https://groups.google.com/d/topic/rec.arts.movies/-qNue6RwTn8/discussion">https://groups.google.com/d/topic/rec.arts.movies/-qNue6RwTn8/discussion</a>. Retrieved December 12, 2015.</p>
+
+        </section>
+      </article>
+    </div>
+  </div>
+
+</div>
+
+<footer class="li-page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="sixteen columns">
+        <div class="li-page-footer-legal">
+          This blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons BY-NC 4.0 License</a>.
+        </div>
+        <div class="li-page-footer-cc">
+          <span class="">
+            <img src="http://www.iopanic.com/images/cc.svg">
+            <img src="http://www.iopanic.com/images/by.svg">
+            <img src="http://www.iopanic.com/images/nc.svg">
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script type="text/javascript">
+    <!--
+    function toggle(id) {
+        var e = document.getElementById(id);
+        e.style.display == 'block' ? e.style.display = 'none' : e.style.display = 'block';
+    }
+    
+    </script>
+    <script type="text/javascript">
+    <!--
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', "UA-65857687-3"]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    -->
+    </script>
+    </body>
+</html>
