@@ -88,3 +88,4 @@ Further interesting questions around this topic can be certainly asked. Especial
 
 [1] J. Guare, Six Degrees of Separation: A Play, Vintage Books, New York, 1990.<br/>
 [2] A. Ruthven, (April 7, 1994). Kevin Bacon is the Center of the Universe. https://groups.google.com/d/topic/rec.arts.movies/-qNue6RwTn8/discussion. Retrieved December 12, 2015.
+</small>

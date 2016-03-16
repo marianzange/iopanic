@@ -41,6 +41,13 @@ hr {
     margin-bottom: 6px;
 }
 
+
+.li-article-taxonomies a {
+	background: #f6f6f6;
+	padding: 2px 4px;
+}
+
+
 p > img {
     max-width: 100%;
 }
