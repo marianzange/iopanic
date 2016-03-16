@@ -92,7 +92,7 @@ RETURN size(nodes(p)), count(*);
 
 &lt;p&gt;The resulting numbers show, that 97.1% of German Wikipedia articles are less than 6 hops away from the article about ’Adolf Hitler’. Therefore we can conclude that the stated hypothesis is confirmed and the ’urban myth’ can be considered a fact.&lt;/p&gt;
 
-&lt;p&gt;Further interesting questions around this topic can be certainly asked. Especially since we’re looking at topic that’s culturally extremely relevant for the community that created and maintains the analyzed Wikipedia corpus, it might be of interest to compare results with Wikipedia editions in other languages.&lt;/p&gt;
+&lt;p&gt;Further interesting questions around this topic can be certainly asked. Especially since we’re looking at a topic that’s culturally extremely relevant for the community that created and maintains the analyzed Wikipedia corpus, it might be of interest to compare results with Wikipedia editions in other languages.&lt;/p&gt;
 
 &lt;p&gt;&lt;small&gt;____&lt;/p&gt;
 
