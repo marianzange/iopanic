@@ -16,7 +16,7 @@ tags:
 > ’No Wikipedia article is more than five degrees seperated from the article about Hitler.’ 
 > – Diana
 
-This hypotheses was mentioned by my fellow student Diana during lunch at the TUM cafeteria. Remembering the ’Six Degrees of Seperation’ [1] and the ’Bacon Number’ [2], it sparked my interest in finding evidence for or against her statement.
+This hypothesis was mentioned by my fellow student Diana during lunch at the TUM cafeteria. Remembering the ’Six Degrees of Seperation’ [1] and the ’Bacon Number’ [2], it sparked my interest in finding evidence for or against her statement.
 
 To simplify computation, for this study I’ve reduced the dataset to article names and ingoing and outgoing internal links. Based on this extremely flat, but broad information structure we can already start answering some interesting questions when it comes to relatedness and importance of articles from the corpus.
 
@@ -32,7 +32,7 @@ The imported dataset contains 3,169,885 pages connected by 48,993,269 links. 6,4
 
 ### B. Computation
 
-For computing the results, Neo4j, a database designed for storing and querying graph structures has been used. Neo4j implements it’s own shortest path algorithm. The following query was used to compute the results.
+For computing the results, Neo4j, a database designed for storing and querying graph structures has been used. Neo4j implements its own shortest path algorithm. The following query was used to compute the results.
 
 ```
 MATCH (a:Page), (b:Page {title:’Adolf Hitler’}), p=shortestPath ((a)−[*..15]−>(b))
