@@ -82,7 +82,7 @@ From the total of 3,169,885 vertices, 97.1% have &#8467; ≤ 5 to reach the arti
 
 The resulting numbers show, that 97.1% of German Wikipedia articles are less than 6 hops away from the article about ’Adolf Hitler’. Therefore we can conclude that the stated hypothesis is confirmed and the ’urban myth’ can be considered a fact.
 
-Further interesting questions around this topic can be certainly asked. Especially since we’re looking at topic that’s culturally extremely relevant for the community that created and maintains the analyzed Wikipedia corpus, it might be of interest to compare results with Wikipedia editions in other languages.
+Further interesting questions around this topic can be certainly asked. Especially since we’re looking at a topic that’s culturally extremely relevant for the community that created and maintains the analyzed Wikipedia corpus, it might be of interest to compare results with Wikipedia editions in other languages.
 
 <small>____
 
