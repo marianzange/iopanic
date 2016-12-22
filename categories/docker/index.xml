@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iopanic</title>
+    <link>http://www.iopanic.com/categories/docker/index.xml</link>
+    <description>Recent content on iopanic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <atom:link href="http://www.iopanic.com/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building and deploying docker images from Travis to ECS</title>
+      <link>http://www.iopanic.com/post/deploying_to_ecs_from_travis/</link>
+      <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.iopanic.com/post/deploying_to_ecs_from_travis/</guid>
+      <description>&lt;p&gt;&lt;i&gt;This article assumes that you&amp;rsquo;re generally familiar with Docker, Amazon IAM, Travis CI and some basic bash scripting.&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn&amp;rsquo;t give you a build environment liek Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.&lt;/p&gt;
+
+&lt;p&gt;For one of my recent projects, I chose to use Travis to push the images to &lt;a href=&#34;https://aws.amazon.com/ecr/&#34;&gt;ECR&lt;/a&gt;. Having a proper CI process in place ensures, that no images are pushed before they pass all the required tests. Since Travis can execute arbitrary scripts, it&amp;rsquo;s quite easy to get it to build and push your image. No need for an extra Docker build environment.&lt;/p&gt;
+
+&lt;h2&gt;The deploy script&lt;/h2&gt;
+
+&lt;p&gt;Below you can see the little bash script, that is executed in &lt;code&gt;after_success&lt;/code&gt; and does the magic. It&amp;rsquo;s quite easy to follow and customize to your needs, so I won&amp;rsquo;t describe it in detail. You can either place this script in your project repo or on a remote location and just curl it when you need it.&lt;/p&gt;
+
+&lt;pre&gt;
+#!/usr/bin/env bash
+
+if ! [ $TRAVIS_PULL_REQUEST == &#34;false&#34; ]; then
+  echo &#34;This is a pull request. Skipping docker build and ECR deployment.&#34;;
+  exit 0;
+fi
+
+TAG=`if [ &#34;$TRAVIS_BRANCH&#34; == &#34;master&#34; ]; then echo &#34;latest&#34;; else echo $TRAVIS_BRANCH ; fi`
+COMMIT=${TRAVIS_COMMIT::8}
+
+docker --version
+pip install --user awscli
+export PATH=$PATH:$HOME/.local/bin
+eval $(aws ecr get-login --region us-east-1)
+
+docker build -t $DOCKER_REPO .
+
+docker tag $DOCKER_REPO $DOCKER_ECR/$DOCKER_REPO:$TAG
+docker push $DOCKER_ECR/$DOCKER_REPO:$TAG
+&lt;/pre&gt;
+
+&lt;h2&gt;Travis file&lt;/h2&gt;
+
+&lt;p&gt;To call this script, you can simply add it to the &lt;code&gt;after_success&lt;/code&gt; section in your &lt;code&gt;travis.yml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+sudo: required
+language: node_js
+node_js:
+  - &#39;6&#39;
+services:
+  - docker
+env:
+  global:
+    - DOCKER_ECR=ACCOUNTID.dkr.ecr.us-east-1.amazonaws.com
+    - DOCKER_REPO=REPO_NAME
+after_success:
+  - ./deploy_ecr
+&lt;/pre&gt;
+
+&lt;p&gt;Don&amp;rsquo;t forget to set your &lt;code&gt;AWS_ACCESS_KEY_ID&lt;/code&gt; and &lt;code&gt;AWS_SECRET_ACCESS_KEY&lt;/code&gt; environment variables.&lt;/p&gt;
+
+&lt;h2&gt;IAM policy&lt;/h2&gt;
+
+&lt;p&gt;To allow your IAM user to acquire a temporary auth token for ECR, you&amp;rsquo;ll need to attach the following policy (or alternatively more fine grained if you want).&lt;/p&gt;
+
+&lt;pre&gt;
+{
+    &#34;Version&#34;: &#34;2012-10-17&#34;,
+    &#34;Statement&#34;: [{
+        &#34;Effect&#34;: &#34;Allow&#34;,
+        &#34;Action&#34;: [
+            &#34;ecr:GetAuthorizationToken&#34;
+        ],
+        &#34;Resource&#34;: [
+            &#34;*&#34;
+        ]
+    }]
+}
+&lt;/pre&gt;
+
+&lt;h2&gt;ECR repository permissions&lt;/h2&gt;
+
+&lt;p&gt;And to make things even more fun, you&amp;rsquo;ll also need to set a policy on your actual ECR repo. Below you can see an example policy specifying a &amp;lsquo;WritePolicy&amp;rsquo; for the IAM user you use to push your Docker images and a &amp;lsquo;ReadPolicy&amp;rsquo; for an EC2 instance role to get images. This is just an example and you should adapt this to your own needs.&lt;/p&gt;
+
+&lt;pre&gt;
+{
+    &#34;Version&#34;: &#34;2008-10-17&#34;,
+    &#34;Statement&#34;: [{
+        &#34;Sid&#34;: &#34;WritePolicy&#34;,
+        &#34;Effect&#34;: &#34;Allow&#34;,
+        &#34;Principal&#34;: {
+            &#34;AWS&#34;: &#34;arn:aws:iam::123456789:user/ecr-deployer&#34;
+        },
+        &#34;Action&#34;: [
+            &#34;ecr:DescribeRepositories&#34;,
+            &#34;ecr:GetRepositoryPolicy&#34;,
+            &#34;ecr:ListImages&#34;,
+            &#34;ecr:DescribeImages&#34;,
+            &#34;ecr:DeleteRepository&#34;,
+            &#34;ecr:BatchDeleteImage&#34;,
+            &#34;ecr:SetRepositoryPolicy&#34;,
+            &#34;ecr:DeleteRepositoryPolicy&#34;,
+            &#34;ecr:GetDownloadUrlForLayer&#34;,
+            &#34;ecr:BatchGetImage&#34;,
+            &#34;ecr:BatchCheckLayerAvailability&#34;,
+            &#34;ecr:PutImage&#34;,
+            &#34;ecr:InitiateLayerUpload&#34;,
+            &#34;ecr:UploadLayerPart&#34;,
+            &#34;ecr:CompleteLayerUpload&#34;
+        ]
+    }, {
+        &#34;Sid&#34;: &#34;ReadPolicy&#34;,
+        &#34;Effect&#34;: &#34;Allow&#34;,
+        &#34;Principal&#34;: {
+            &#34;AWS&#34;: [
+                &#34;arn:aws:iam::309127738623:role/SomeServerRole&#34;
+            ]
+        },
+        &#34;Action&#34;: [
+            &#34;ecr:GetDownloadUrlForLayer&#34;,
+            &#34;ecr:BatchGetImage&#34;,
+            &#34;ecr:BatchCheckLayerAvailability&#34;
+        ]
+    }]
+}
+&lt;/pre&gt;
+
+&lt;p&gt;I think it&amp;rsquo;s a fairly easy setup and if you already pay for Travis, why not use it also to build your Docker images. I hope this little guide was helpful and you can enjoy your new Travis/ECR setup.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
