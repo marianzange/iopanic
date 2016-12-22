@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Software Engineering on iopanic</title>
-    <link>http://www.iopanic.com/categories/software-engineering/</link>
-    <description>Recent content in Software Engineering on iopanic</description>
+    <title>iopanic</title>
+    <link>http://www.iopanic.com/categories/software-engineering/index.xml</link>
+    <description>Recent content on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 28 Jan 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.iopanic.com/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -22,13 +21,13 @@
 
 &lt;p&gt;The purpose of this post is not to give you an intro to Docker and Dusty, but to basically present you an example dev environment with some useful addons that help you with logging, monitoring and config management. If you don&amp;rsquo;t know about Dusty yet, read their excellent docs at &lt;a href=&#34;https://dusty.readthedocs.org&#34;&gt;https://dusty.readthedocs.org&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;developing-with-docker:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Developing with Docker&lt;/h2&gt;
+&lt;h2 id=&#34;developing-with-docker&#34;&gt;Developing with Docker&lt;/h2&gt;
 
 &lt;p&gt;Developing with Docker has always been a bit tricky. Sure, there&amp;rsquo;s Docker Compose and you can mount your code from your disk into your container. But it always seemed a bit messy and since there wasn&amp;rsquo;t any clean structure around developing in containerized environments it tended to get messy again.&lt;/p&gt;
 
 &lt;p&gt;Fortunately, the great folks at GameChanger came up with Dusty. A neat little tools that makes working with dockerized dev environments fun fun fun. Dusty allows you to configure your whole environment with yaml files (basically like docker compose) but adds useful components and structure to the whole thing. Especially mixing exactly the components you need and decide which code you want to mount into a containers is dead simple with Dusty.&lt;/p&gt;
 
-&lt;h2 id=&#34;get-started-with-dusty:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Get Started with Dusty&lt;/h2&gt;
+&lt;h2 id=&#34;get-started-with-dusty&#34;&gt;Get Started with Dusty&lt;/h2&gt;
 
 &lt;p&gt;Follow the Dusty install docs and set everything up. Once you&amp;rsquo;ve installed Dusty and all its requirements, run &lt;code&gt;$ dusty setup&lt;/code&gt; and follow the prompts. If you want to used my example repository, enter &lt;code&gt;github.com/marianzange/dusty-boilerplate&lt;/code&gt; as specs repo.&lt;/p&gt;
 
@@ -80,7 +79,7 @@ proxy that automatically proxies all your requests to the correct container. Thi
 vanity URLs for local development. I would recommend using a standard compliant domain that&amp;rsquo;s not registered by anyone
 to avoid browser autocorrect etc.&lt;/p&gt;
 
-&lt;h2 id=&#34;specs-structure:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Specs Structure&lt;/h2&gt;
+&lt;h2 id=&#34;specs-structure&#34;&gt;Specs Structure&lt;/h2&gt;
 
 &lt;p&gt;To work with Dusty, you need to create a specs repo. Specs are a simple set of yml files specifying how your environment looks like. My example specs repo (&lt;a href=&#34;https://github.com/marianzange/dusty-boilerplate&#34;&gt;https://github.com/marianzange/dusty-boilerplate&lt;/a&gt;) has the following structure:&lt;/p&gt;
 
@@ -106,7 +105,7 @@ to avoid browser autocorrect etc.&lt;/p&gt;
 
 &lt;p&gt;In the example, the app we want to work with is called &amp;lsquo;flask&amp;rsquo;. It&amp;rsquo;s a simple Flask hello world example which is hosted here: &lt;a href=&#34;https://github.com/marianzange/dusty-boilerplate-flask&#34;&gt;https://github.com/marianzange/dusty-boilerplate-flask&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;managing-configurations-with-etcd:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Managing Configurations with etcd&lt;/h2&gt;
+&lt;h2 id=&#34;managing-configurations-with-etcd&#34;&gt;Managing Configurations with etcd&lt;/h2&gt;
 
 &lt;p&gt;There are many different ways to manage configs. One of my favorite ways is etcd. It&amp;rsquo;s lightweight and you can use it locally and in production the same way.
 Since we&amp;rsquo;re trying to get a fully isolated mix-n-match development environment, our etcd is contained in our Dusty specs as a service.&lt;/p&gt;
@@ -146,7 +145,7 @@ the connect field. Now this is not very elegant to be honest. I couldn&amp;rsquo
 
 &lt;p&gt;All etcd data is persisted, so no need to worry when restarting your etcd container.&lt;/p&gt;
 
-&lt;h2 id=&#34;logging:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Logging&lt;/h2&gt;
+&lt;h2 id=&#34;logging&#34;&gt;Logging&lt;/h2&gt;
 
 &lt;p&gt;If you develop an application, you obviously want to have a realtime stream of relavant logs always open. There are multiple ways to do so with Dusty. Either your run &lt;code&gt;$ dusty logs app_name&lt;/code&gt; or you can aggregate your docker logs with log.io or another tool.&lt;/p&gt;
 
@@ -154,7 +153,7 @@ the connect field. Now this is not very elegant to be honest. I couldn&amp;rsquo
 
 &lt;p&gt;&lt;img src=&#34;http://www.iopanic.com/images/posts/docker-logio.jpg&#34; alt=&#34;log.io stream&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;monitoring:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Monitoring&lt;/h2&gt;
+&lt;h2 id=&#34;monitoring&#34;&gt;Monitoring&lt;/h2&gt;
 
 &lt;p&gt;There are many moving parts in a development environment and sometimes you&amp;rsquo;re wondering why your CPU is suddenly feeling the heat.
 To get some quick insights into what going on with your containers, I&amp;rsquo;ve added Google CAdvisor (&lt;a href=&#34;https://github.com/google/cadvisor&#34;&gt;https://github.com/google/cadvisor&lt;/a&gt;) to the toolbox. CAdvisor

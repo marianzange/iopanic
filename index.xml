@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iopanic</title>
-    <link>http://www.iopanic.com/</link>
+    <link>http://www.iopanic.com/index.xml</link>
     <description>Recent content on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 15 Mar 2016 00:00:00 +0000</lastBuildDate>
@@ -18,7 +18,7 @@
 
 &lt;p&gt;&lt;strong&gt;According to a fellow student, a general assumption exists, stating that almost no article on Wikipedia is more than five degrees seperated from the article about Adolf Hitler. To verify this assumption, I have analyzed the German Wikipedia and computed the shortest distance between all vertices and the vertex representing the article about Adolf Hitler. The result shows that 97.1% of all articles have a path length of ≤ 5.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;i-introduction:c23c9cf43b45a68cbbc5c25f0c2247fc&#34;&gt;I. Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;i-introduction&#34;&gt;I. Introduction&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;’No Wikipedia article is more than five degrees seperated from the article about Hitler.’
@@ -31,17 +31,17 @@
 
 &lt;p&gt;We can for example compute the indegrees and outdegrees of nodes we’re interested in or determine the shortest path between nodes. To find evidence for the stated hypotheses, I’ve looked at the shortest path from all vertices in the graph to the vertex representing the article about ’Adolf Hitler’.&lt;/p&gt;
 
-&lt;h2 id=&#34;ii-data-and-methods:c23c9cf43b45a68cbbc5c25f0c2247fc&#34;&gt;II. Data and Methods&lt;/h2&gt;
+&lt;h2 id=&#34;ii-data-and-methods&#34;&gt;II. Data and Methods&lt;/h2&gt;
 
 &lt;p&gt;Wikipedia itself is a conceptually perfect source to answer questions like ’How far away is X from Y?’. The concept of distance can be treated in different ways. One of the simplest ways is to treat the corpus of articles as an unweighted, directed graph structure. The vertices in our graph represent the articles and internal links are represented by the directed edges in between. The direction of edges follows the direction of hyperlinks.&lt;/p&gt;
 
-&lt;h3 id=&#34;a-dataset:c23c9cf43b45a68cbbc5c25f0c2247fc&#34;&gt;A. Dataset&lt;/h3&gt;
+&lt;h3 id=&#34;a-dataset&#34;&gt;A. Dataset&lt;/h3&gt;
 
 &lt;p&gt;I’ve conducted the evaluation on the German edition Wikipedia as of December 2015. The dataset was acquired from a Wikipedia full &lt;a href=&#34;https://dumps.wikimedia.org/dewiki/20151201/dewiki-20151201-pages- articles.xml.bz2&#34;&gt;article dump&lt;/a&gt; and post processed with &lt;a href=&#34;https://github.com/mirkonasato/graphipedia&#34;&gt;Graphipedia&lt;/a&gt;, a tool to prepare Wikipedia dumps for import into a &lt;a href=&#34;http://www.neo4j.com&#34;&gt;Neo4j&lt;/a&gt; database.&lt;/p&gt;
 
 &lt;p&gt;The imported dataset contains 3,169,885 pages connected by 48,993,269 links. 6,466,688 broken links have been removed before and are not included in the tested dataset.&lt;/p&gt;
 
-&lt;h3 id=&#34;b-computation:c23c9cf43b45a68cbbc5c25f0c2247fc&#34;&gt;B. Computation&lt;/h3&gt;
+&lt;h3 id=&#34;b-computation&#34;&gt;B. Computation&lt;/h3&gt;
 
 &lt;p&gt;For computing the results, Neo4j, a database designed for storing and querying graph structures has been used. Neo4j implements its own shortest path algorithm. The following query was used to compute the results.&lt;/p&gt;
 
@@ -51,7 +51,7 @@ RETURN size(nodes(p)), count(*);
 
 &lt;p&gt;Neo4j uses a Breadth-first search (BFS) algorithm to determine the shortest path when analyzing a directed, unweighted graph. BFS has a worst-case runtime complexity of &lt;code&gt;O(V + E)&lt;/code&gt; Where V is the total number of vertices and E is the total number of edges. The BFS for this study was configured to not include &amp;#8467; &amp;gt; 14.&lt;/p&gt;
 
-&lt;h2 id=&#34;iii-results:c23c9cf43b45a68cbbc5c25f0c2247fc&#34;&gt;III. Results&lt;/h2&gt;
+&lt;h2 id=&#34;iii-results&#34;&gt;III. Results&lt;/h2&gt;
 
 &lt;p&gt;From the total of 3,169,885 vertices, 97.1% have &amp;#8467; ≤ 5 to reach the article about ’Adolf Hitler’. For distribution see the following figures.&lt;/p&gt;
 
@@ -88,7 +88,7 @@ RETURN size(nodes(p)), count(*);
     &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&#34;iv-conclusion:c23c9cf43b45a68cbbc5c25f0c2247fc&#34;&gt;IV. Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;iv-conclusion&#34;&gt;IV. Conclusion&lt;/h2&gt;
 
 &lt;p&gt;The resulting numbers show, that 97.1% of German Wikipedia articles are less than 6 hops away from the article about ’Adolf Hitler’. Therefore we can conclude that the stated hypothesis is confirmed and the ’urban myth’ can be considered a fact.&lt;/p&gt;
 
@@ -122,7 +122,7 @@ RETURN size(nodes(p)), count(*);
 
 &lt;p&gt;We need opportunities to ask questions and systems to stay curious beyond the childhood. Our school system and many families are horrible when it comes to teaching kids to ask questions. Most of the classes are occupied with teachers directing questions at students. It should be the other way round. Parents and the education system should open a window to the world and the universe. If they do, I&amp;rsquo;m almost certain that kids will start trying to understand the things they perceive on their own.&lt;/p&gt;
 
-&lt;h2 id=&#34;update-march-07-2016:146f7ed7864a079a8c7a6e053891fabd&#34;&gt;Update - March 07, 2016&lt;/h2&gt;
+&lt;h2 id=&#34;update-march-07-2016&#34;&gt;Update - March 07, 2016&lt;/h2&gt;
 
 &lt;p&gt;Nautilus Magazine recently published an interesting article on curiosity and how it&amp;rsquo;s emerging from what we already know: &lt;a href=&#34;http://nautil.us/issue/33/attraction/curiosity-depends-on-what-you-already-know&#34;&gt;Curiosity Depends on What You Already Know&lt;/a&gt; (by Zach St. George)&lt;/p&gt;
 
@@ -146,13 +146,13 @@ RETURN size(nodes(p)), count(*);
 
 &lt;p&gt;The purpose of this post is not to give you an intro to Docker and Dusty, but to basically present you an example dev environment with some useful addons that help you with logging, monitoring and config management. If you don&amp;rsquo;t know about Dusty yet, read their excellent docs at &lt;a href=&#34;https://dusty.readthedocs.org&#34;&gt;https://dusty.readthedocs.org&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;developing-with-docker:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Developing with Docker&lt;/h2&gt;
+&lt;h2 id=&#34;developing-with-docker&#34;&gt;Developing with Docker&lt;/h2&gt;
 
 &lt;p&gt;Developing with Docker has always been a bit tricky. Sure, there&amp;rsquo;s Docker Compose and you can mount your code from your disk into your container. But it always seemed a bit messy and since there wasn&amp;rsquo;t any clean structure around developing in containerized environments it tended to get messy again.&lt;/p&gt;
 
 &lt;p&gt;Fortunately, the great folks at GameChanger came up with Dusty. A neat little tools that makes working with dockerized dev environments fun fun fun. Dusty allows you to configure your whole environment with yaml files (basically like docker compose) but adds useful components and structure to the whole thing. Especially mixing exactly the components you need and decide which code you want to mount into a containers is dead simple with Dusty.&lt;/p&gt;
 
-&lt;h2 id=&#34;get-started-with-dusty:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Get Started with Dusty&lt;/h2&gt;
+&lt;h2 id=&#34;get-started-with-dusty&#34;&gt;Get Started with Dusty&lt;/h2&gt;
 
 &lt;p&gt;Follow the Dusty install docs and set everything up. Once you&amp;rsquo;ve installed Dusty and all its requirements, run &lt;code&gt;$ dusty setup&lt;/code&gt; and follow the prompts. If you want to used my example repository, enter &lt;code&gt;github.com/marianzange/dusty-boilerplate&lt;/code&gt; as specs repo.&lt;/p&gt;
 
@@ -204,7 +204,7 @@ proxy that automatically proxies all your requests to the correct container. Thi
 vanity URLs for local development. I would recommend using a standard compliant domain that&amp;rsquo;s not registered by anyone
 to avoid browser autocorrect etc.&lt;/p&gt;
 
-&lt;h2 id=&#34;specs-structure:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Specs Structure&lt;/h2&gt;
+&lt;h2 id=&#34;specs-structure&#34;&gt;Specs Structure&lt;/h2&gt;
 
 &lt;p&gt;To work with Dusty, you need to create a specs repo. Specs are a simple set of yml files specifying how your environment looks like. My example specs repo (&lt;a href=&#34;https://github.com/marianzange/dusty-boilerplate&#34;&gt;https://github.com/marianzange/dusty-boilerplate&lt;/a&gt;) has the following structure:&lt;/p&gt;
 
@@ -230,7 +230,7 @@ to avoid browser autocorrect etc.&lt;/p&gt;
 
 &lt;p&gt;In the example, the app we want to work with is called &amp;lsquo;flask&amp;rsquo;. It&amp;rsquo;s a simple Flask hello world example which is hosted here: &lt;a href=&#34;https://github.com/marianzange/dusty-boilerplate-flask&#34;&gt;https://github.com/marianzange/dusty-boilerplate-flask&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;managing-configurations-with-etcd:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Managing Configurations with etcd&lt;/h2&gt;
+&lt;h2 id=&#34;managing-configurations-with-etcd&#34;&gt;Managing Configurations with etcd&lt;/h2&gt;
 
 &lt;p&gt;There are many different ways to manage configs. One of my favorite ways is etcd. It&amp;rsquo;s lightweight and you can use it locally and in production the same way.
 Since we&amp;rsquo;re trying to get a fully isolated mix-n-match development environment, our etcd is contained in our Dusty specs as a service.&lt;/p&gt;
@@ -270,7 +270,7 @@ the connect field. Now this is not very elegant to be honest. I couldn&amp;rsquo
 
 &lt;p&gt;All etcd data is persisted, so no need to worry when restarting your etcd container.&lt;/p&gt;
 
-&lt;h2 id=&#34;logging:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Logging&lt;/h2&gt;
+&lt;h2 id=&#34;logging&#34;&gt;Logging&lt;/h2&gt;
 
 &lt;p&gt;If you develop an application, you obviously want to have a realtime stream of relavant logs always open. There are multiple ways to do so with Dusty. Either your run &lt;code&gt;$ dusty logs app_name&lt;/code&gt; or you can aggregate your docker logs with log.io or another tool.&lt;/p&gt;
 
@@ -278,7 +278,7 @@ the connect field. Now this is not very elegant to be honest. I couldn&amp;rsquo
 
 &lt;p&gt;&lt;img src=&#34;http://www.iopanic.com/images/posts/docker-logio.jpg&#34; alt=&#34;log.io stream&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;monitoring:0f85f0a5854727b79a1edf02c60004aa&#34;&gt;Monitoring&lt;/h2&gt;
+&lt;h2 id=&#34;monitoring&#34;&gt;Monitoring&lt;/h2&gt;
 
 &lt;p&gt;There are many moving parts in a development environment and sometimes you&amp;rsquo;re wondering why your CPU is suddenly feeling the heat.
 To get some quick insights into what going on with your containers, I&amp;rsquo;ve added Google CAdvisor (&lt;a href=&#34;https://github.com/google/cadvisor&#34;&gt;https://github.com/google/cadvisor&lt;/a&gt;) to the toolbox. CAdvisor
@@ -340,7 +340,7 @@ but present some opinionated aspects and additional tools that can help you when
 
 &lt;p&gt;&lt;em&gt;This article was originally published by me on the ezeep blog. Please note that ezeep, including it&amp;rsquo;s blog contents, has been acquired since then. Consequently this post might not appear on the ezeep blog anymore or might reference to a different author within ezeep&amp;rsquo;s new parent company.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;losing-the-hackers:31950e35ecd470d63500f1ec324d548b&#34;&gt;Losing The Hackers&lt;/h2&gt;
+&lt;h2 id=&#34;losing-the-hackers&#34;&gt;Losing The Hackers&lt;/h2&gt;
 
 &lt;p&gt;In the late 1970’s, Richard Stallman and his colleagues at the MIT Artificial Intelligence Lab were using one of the
 first XEROX Xerographic printers. The device was provided to the lab for free. Compared to current standards,
@@ -364,7 +364,7 @@ restrict its users. -– Stallman’s Law&lt;/p&gt;
 the place. You can read the whole story about Richard Stallman’s eye opening printer experience here:
 &lt;a href=&#34;http://oreilly.com/openbook/freedom/ch01.html&#34;&gt;http://oreilly.com/openbook/freedom/ch01.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;an-innovation-free-zone:31950e35ecd470d63500f1ec324d548b&#34;&gt;An Innovation-Free Zone&lt;/h2&gt;
+&lt;h2 id=&#34;an-innovation-free-zone&#34;&gt;An Innovation-Free Zone&lt;/h2&gt;
 
 &lt;p&gt;Stallman wrote his little paper jam notifier 30 years ago. Even today, printer status information for most devices is
 still notoriously unreliable. There hasn’t been a lot of innovation in printing since the early days. Because of its
@@ -378,7 +378,7 @@ Printing is a tool for exchanging, archiving, annotating and sharing information
 like e-books or tablets solve parts of the same problem. Each of those deal with a particular issue, but don’t address
 the same wide scope printing does. Interestingly, there’s barely any innovation coming out of the printing space itself.&lt;/p&gt;
 
-&lt;h2 id=&#34;breaking-the-rules:31950e35ecd470d63500f1ec324d548b&#34;&gt;Breaking the Rules&lt;/h2&gt;
+&lt;h2 id=&#34;breaking-the-rules&#34;&gt;Breaking the Rules&lt;/h2&gt;
 
 &lt;p&gt;At ezeep, we’re dealing with all the proprietary parts of printing every day and are in a constant battle to build an
 abstraction layer on top of those closed legacy systems. This turned out to be an incredibly hard challenge and made
@@ -401,7 +401,7 @@ something open that actually improves people’s life and work.&lt;/p&gt;
       <guid>http://www.iopanic.com/post/shaped_by_algorithms/</guid>
       <description>
 
-&lt;h2 id=&#34;gaining-certainty-through-abstraction:f532d64bf099fee510d5d95af99bf4f3&#34;&gt;Gaining Certainty Through Abstraction&lt;/h2&gt;
+&lt;h2 id=&#34;gaining-certainty-through-abstraction&#34;&gt;Gaining Certainty Through Abstraction&lt;/h2&gt;
 
 &lt;p&gt;Technology has always shaped how we interact with the world and the people around us. Let’s start off with a very simple example: When the first bridges were built, the engineering part was a great achievement, but the idea of building a bridge is less about solving engineering problems just for the sake of solving them. Building a bridge is in it’s very essential core about connecting people. A bridge gives people a safe way to the other side of an obstacle like a water stream or a dangerous canyon.&lt;/p&gt;
 
@@ -409,7 +409,7 @@ something open that actually improves people’s life and work.&lt;/p&gt;
 
 &lt;p&gt;All these different dimensions of uncertainty are still there after building the bridge but you don’t have to face them anymore. The bridge acts as an abstraction layer between you and a more or less significant fragment of the world around you. The engineers who have built the bridge, reduced your uncertainty regarding a set of challenges by not removing the uncertainty from the challenges themselves, but by building an abstraction layer between you and the original challenge.&lt;/p&gt;
 
-&lt;h2 id=&#34;predictions-alter-reality-your-reality:f532d64bf099fee510d5d95af99bf4f3&#34;&gt;Predictions Alter Reality - Your Reality&lt;/h2&gt;
+&lt;h2 id=&#34;predictions-alter-reality-your-reality&#34;&gt;Predictions Alter Reality - Your Reality&lt;/h2&gt;
 
 &lt;p&gt;When you keep extending my little thought experiment, you’ll probably notice that we’re living in a world of extremely high abstraction. Last weekend I traveled to Copenhagen for a little bit more than 24 hours. The biggest challenge I had to face was my quickly draining smartphone battery. So I’m in another country and all I think about is my phone battery. That’s sad, but everything else ended up being highly predictable though the lens of technology.&lt;/p&gt;
 
@@ -445,13 +445,13 @@ something open that actually improves people’s life and work.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://www.iopanic.com/images/particle_disposal.jpg&#34; alt=&#34;Schroedinger&#39;s cat feeding on top quarks&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I study physics at &lt;a href=&#34;http://www.tum.edu&#34;&gt;Technical University of Munich (TUM)&lt;/a&gt; and &lt;a href=&#34;http://www.uni-muenchen.de&#34;&gt;Ludwig-Maximilians University (LMU)&lt;/a&gt;. I can get pretty excited about anything physics related, especially if it involves quantum mechanics and particle physics.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a freelance software engineer and devops expert with more than 10 years of experience. I&amp;rsquo;m mostly focused on architecting complex systems and processes. But I also do a lot of hands on coding across the entire spectrum from mobile to algorithms. In the past I&amp;rsquo;ve co-founded several venture capital backed technology startups, the last one being &lt;i&gt;ezeep&lt;/i&gt;, a cloud printing service (acquired by Cortado).&lt;/p&gt;
 
-&lt;p&gt;Before going back to university to have fun with physics, I&amp;rsquo;ve co-founded several venture capital backed technology startups (the last one being ezeep). Besides studying I&amp;rsquo;m a freelance software engineer and technical product lead.&lt;/p&gt;
+&lt;p&gt;Besides my work, I study physics at &lt;a href=&#34;http://www.tum.edu&#34;&gt;Technical University of Munich (TUM)&lt;/a&gt; and &lt;a href=&#34;http://www.uni-muenchen.de&#34;&gt;Ludwig-Maximilians University (LMU)&lt;/a&gt;. My main interest is in the area of high energy physics, especially neutrino physics.&lt;/p&gt;
 
-&lt;p&gt;If you want to learn more about my CV, feel free to check out my LinkedIn profile, google my name if you want to be one of the creepy people or just send me an email and ask.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m currently not available to join any projects, but feel free to contact me. You never know what the future might bring. And please, be one of the cool kids and use my PGP key.&lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;You can contact me at &lt;a href=&#34;mailto:marian.zange@tum.de&#34;&gt;&lt;b&gt;marian.zange@tum.de&lt;/b&gt;&lt;/a&gt; &lt;a href=&#34;http://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x8E1275E0773E6126&#34;&gt;(PGP Key ID 773E6126)&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Email me at &lt;a href=&#34;mailto:marian.zange@tum.de&#34;&gt;&lt;b&gt;marian.zange@tum.de&lt;/b&gt;&lt;/a&gt; &lt;a href=&#34;http://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x8E1275E0773E6126&#34;&gt;(PGP Key ID 773E6126)&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
 </description>
     </item>
     

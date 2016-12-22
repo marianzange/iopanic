@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Complex Systems on iopanic</title>
-    <link>http://www.iopanic.com/categories/complex-systems/</link>
-    <description>Recent content in Complex Systems on iopanic</description>
+    <title>iopanic</title>
+    <link>http://www.iopanic.com/categories/complex-systems/index.xml</link>
+    <description>Recent content on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.iopanic.com/categories/complex-systems/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,7 +15,7 @@
       <guid>http://www.iopanic.com/post/shaped_by_algorithms/</guid>
       <description>
 
-&lt;h2 id=&#34;gaining-certainty-through-abstraction:f532d64bf099fee510d5d95af99bf4f3&#34;&gt;Gaining Certainty Through Abstraction&lt;/h2&gt;
+&lt;h2 id=&#34;gaining-certainty-through-abstraction&#34;&gt;Gaining Certainty Through Abstraction&lt;/h2&gt;
 
 &lt;p&gt;Technology has always shaped how we interact with the world and the people around us. Let’s start off with a very simple example: When the first bridges were built, the engineering part was a great achievement, but the idea of building a bridge is less about solving engineering problems just for the sake of solving them. Building a bridge is in it’s very essential core about connecting people. A bridge gives people a safe way to the other side of an obstacle like a water stream or a dangerous canyon.&lt;/p&gt;
 
@@ -24,7 +23,7 @@
 
 &lt;p&gt;All these different dimensions of uncertainty are still there after building the bridge but you don’t have to face them anymore. The bridge acts as an abstraction layer between you and a more or less significant fragment of the world around you. The engineers who have built the bridge, reduced your uncertainty regarding a set of challenges by not removing the uncertainty from the challenges themselves, but by building an abstraction layer between you and the original challenge.&lt;/p&gt;
 
-&lt;h2 id=&#34;predictions-alter-reality-your-reality:f532d64bf099fee510d5d95af99bf4f3&#34;&gt;Predictions Alter Reality - Your Reality&lt;/h2&gt;
+&lt;h2 id=&#34;predictions-alter-reality-your-reality&#34;&gt;Predictions Alter Reality - Your Reality&lt;/h2&gt;
 
 &lt;p&gt;When you keep extending my little thought experiment, you’ll probably notice that we’re living in a world of extremely high abstraction. Last weekend I traveled to Copenhagen for a little bit more than 24 hours. The biggest challenge I had to face was my quickly draining smartphone battery. So I’m in another country and all I think about is my phone battery. That’s sad, but everything else ended up being highly predictable though the lens of technology.&lt;/p&gt;
 
