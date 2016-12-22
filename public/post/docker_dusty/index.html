@@ -72,13 +72,13 @@
 
 <p>The purpose of this post is not to give you an intro to Docker and Dusty, but to basically present you an example dev environment with some useful addons that help you with logging, monitoring and config management. If you don&rsquo;t know about Dusty yet, read their excellent docs at <a href="https://dusty.readthedocs.org">https://dusty.readthedocs.org</a>.</p>
 
-<h2 id="developing-with-docker:0f85f0a5854727b79a1edf02c60004aa">Developing with Docker</h2>
+<h2 id="developing-with-docker">Developing with Docker</h2>
 
 <p>Developing with Docker has always been a bit tricky. Sure, there&rsquo;s Docker Compose and you can mount your code from your disk into your container. But it always seemed a bit messy and since there wasn&rsquo;t any clean structure around developing in containerized environments it tended to get messy again.</p>
 
 <p>Fortunately, the great folks at GameChanger came up with Dusty. A neat little tools that makes working with dockerized dev environments fun fun fun. Dusty allows you to configure your whole environment with yaml files (basically like docker compose) but adds useful components and structure to the whole thing. Especially mixing exactly the components you need and decide which code you want to mount into a containers is dead simple with Dusty.</p>
 
-<h2 id="get-started-with-dusty:0f85f0a5854727b79a1edf02c60004aa">Get Started with Dusty</h2>
+<h2 id="get-started-with-dusty">Get Started with Dusty</h2>
 
 <p>Follow the Dusty install docs and set everything up. Once you&rsquo;ve installed Dusty and all its requirements, run <code>$ dusty setup</code> and follow the prompts. If you want to used my example repository, enter <code>github.com/marianzange/dusty-boilerplate</code> as specs repo.</p>
 
@@ -130,7 +130,7 @@ proxy that automatically proxies all your requests to the correct container. Thi
 vanity URLs for local development. I would recommend using a standard compliant domain that&rsquo;s not registered by anyone
 to avoid browser autocorrect etc.</p>
 
-<h2 id="specs-structure:0f85f0a5854727b79a1edf02c60004aa">Specs Structure</h2>
+<h2 id="specs-structure">Specs Structure</h2>
 
 <p>To work with Dusty, you need to create a specs repo. Specs are a simple set of yml files specifying how your environment looks like. My example specs repo (<a href="https://github.com/marianzange/dusty-boilerplate">https://github.com/marianzange/dusty-boilerplate</a>) has the following structure:</p>
 
@@ -156,7 +156,7 @@ to avoid browser autocorrect etc.</p>
 
 <p>In the example, the app we want to work with is called &lsquo;flask&rsquo;. It&rsquo;s a simple Flask hello world example which is hosted here: <a href="https://github.com/marianzange/dusty-boilerplate-flask">https://github.com/marianzange/dusty-boilerplate-flask</a></p>
 
-<h2 id="managing-configurations-with-etcd:0f85f0a5854727b79a1edf02c60004aa">Managing Configurations with etcd</h2>
+<h2 id="managing-configurations-with-etcd">Managing Configurations with etcd</h2>
 
 <p>There are many different ways to manage configs. One of my favorite ways is etcd. It&rsquo;s lightweight and you can use it locally and in production the same way.
 Since we&rsquo;re trying to get a fully isolated mix-n-match development environment, our etcd is contained in our Dusty specs as a service.</p>
@@ -196,7 +196,7 @@ the connect field. Now this is not very elegant to be honest. I couldn&rsquo;t f
 
 <p>All etcd data is persisted, so no need to worry when restarting your etcd container.</p>
 
-<h2 id="logging:0f85f0a5854727b79a1edf02c60004aa">Logging</h2>
+<h2 id="logging">Logging</h2>
 
 <p>If you develop an application, you obviously want to have a realtime stream of relavant logs always open. There are multiple ways to do so with Dusty. Either your run <code>$ dusty logs app_name</code> or you can aggregate your docker logs with log.io or another tool.</p>
 
@@ -204,7 +204,7 @@ the connect field. Now this is not very elegant to be honest. I couldn&rsquo;t f
 
 <p><img src="http://www.iopanic.com/images/posts/docker-logio.jpg" alt="log.io stream" /></p>
 
-<h2 id="monitoring:0f85f0a5854727b79a1edf02c60004aa">Monitoring</h2>
+<h2 id="monitoring">Monitoring</h2>
 
 <p>There are many moving parts in a development environment and sometimes you&rsquo;re wondering why your CPU is suddenly feeling the heat.
 To get some quick insights into what going on with your containers, I&rsquo;ve added Google CAdvisor (<a href="https://github.com/google/cadvisor">https://github.com/google/cadvisor</a>) to the toolbox. CAdvisor
