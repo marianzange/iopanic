@@ -120,7 +120,7 @@ after_success:
         &#34;Effect&#34;: &#34;Allow&#34;,
         &#34;Principal&#34;: {
             &#34;AWS&#34;: [
-                &#34;arn:aws:iam::309127738623:role/SomeServerRole&#34;
+                &#34;arn:aws:iam::123456789:role/SomeServerRole&#34;
             ]
         },
         &#34;Action&#34;: [

@@ -120,7 +120,7 @@ And to make things even more fun, you'll also need to set a policy on your actua
 		"Effect": "Allow",
 		"Principal": {
 			"AWS": [
-				"arn:aws:iam::309127738623:role/SomeServerRole"
+				"arn:aws:iam::123456789:role/SomeServerRole"
 			]
 		},
 		"Action": [
