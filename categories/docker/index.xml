@@ -8,11 +8,11 @@
     <atom:link href="http://www.iopanic.com/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Building and deploying docker images from Travis to ECS</title>
-      <link>http://www.iopanic.com/post/deploying_to_ecs_from_travis/</link>
+      <title>Building and deploying docker images from Travis to ECR</title>
+      <link>http://www.iopanic.com/post/deploying_to_ecr_from_travis/</link>
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/deploying_to_ecs_from_travis/</guid>
+      <guid>http://www.iopanic.com/post/deploying_to_ecr_from_travis/</guid>
       <description>&lt;p&gt;&lt;i&gt;This article assumes that you&amp;rsquo;re generally familiar with Docker, Amazon IAM, Travis CI and some basic bash scripting.&lt;/i&gt;&lt;/p&gt;
 
 &lt;p&gt;I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn&amp;rsquo;t give you a build environment liek Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.&lt;/p&gt;
