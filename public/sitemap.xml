@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.iopanic.com/</loc>
-    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.iopanic.com/post/deploying_to_ecr_from_travis/</loc>
     <lastmod>2016-12-22T00:00:00+00:00</lastmod>
   </url>
@@ -52,7 +47,71 @@
   </url>
   
   <url>
+    <loc>http://www.iopanic.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/categories/complex-systems/</loc>
+    <lastmod>2013-07-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/categories/devops/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/categories/docker/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/categories/education/</loc>
+    <lastmod>2016-02-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/categories/graph-theory/</loc>
+    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.iopanic.com/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/page/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/post/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/categories/research/</loc>
+    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/categories/software-engineering/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.iopanic.com/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

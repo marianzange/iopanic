@@ -12,4 +12,4 @@ Besides my work, I study physics at <a href="http://www.tum.edu">Technical Unive
 
 I'm currently not available to join any projects, but feel free to contact me. You never know what the future might bring. And please, be one of the cool kids and use my PGP key.
 
-<b>Email me at <a href="mailto:marian.zange@tum.de"><b>marian.zange@tum.de</b></a> <a href="http://pgp.mit.edu/pks/lookup?op=vindex&search=0x8E1275E0773E6126">(PGP Key ID 773E6126)</a></b>
+<b>Email me at <a href="mailto:marian@crashpad.io"><b>marian@crashpad.io</b></a> <a href="http://pgp.mit.edu/pks/lookup?op=vindex&search=0x96F425FA638EE11F">(PGP Public Key)</a></b>
