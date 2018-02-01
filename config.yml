@@ -1,6 +1,6 @@
 theme: "liquorice"
 params:
-  enableRSS: true
+  enableRSS: false
   gaCode: "UA-65857687-3"
 contentdir: "content"
 layoutdir: "layouts"

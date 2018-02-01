@@ -2,11 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on iopanic</title>
-    <link>http://www.iopanic.com/post/index.xml</link>
+    <link>http://www.iopanic.com/post/</link>
     <description>Recent content in Posts on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 22 Dec 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://www.iopanic.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.iopanic.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Building and deploying docker images from Travis to ECR</title>
@@ -14,127 +16,8 @@
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/deploying_to_ecr_from_travis/</guid>
-      <description>&lt;p&gt;&lt;i&gt;This article assumes that you&amp;rsquo;re generally familiar with Docker, Amazon IAM, Travis CI and some basic bash scripting.&lt;/i&gt;&lt;/p&gt;
-
-&lt;p&gt;I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn&amp;rsquo;t give you a build environment liek Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.&lt;/p&gt;
-
-&lt;p&gt;For one of my recent projects, I chose to use Travis to push the images to &lt;a href=&#34;https://aws.amazon.com/ecr/&#34;&gt;ECR&lt;/a&gt;. Having a proper CI process in place ensures, that no images are pushed before they pass all the required tests. Since Travis can execute arbitrary scripts, it&amp;rsquo;s quite easy to get it to build and push your image. No need for an extra Docker build environment.&lt;/p&gt;
-
-&lt;h2&gt;The deploy script&lt;/h2&gt;
-
-&lt;p&gt;Below you can see the little bash script, that is executed in &lt;code&gt;after_success&lt;/code&gt; and does the magic. It&amp;rsquo;s quite easy to follow and customize to your needs, so I won&amp;rsquo;t describe it in detail. You can either place this script in your project repo or on a remote location and just curl it when you need it.&lt;/p&gt;
-
-&lt;pre&gt;
-#!/usr/bin/env bash
-
-if ! [ $TRAVIS_PULL_REQUEST == &#34;false&#34; ]; then
-  echo &#34;This is a pull request. Skipping docker build and ECR deployment.&#34;;
-  exit 0;
-fi
-
-TAG=`if [ &#34;$TRAVIS_BRANCH&#34; == &#34;master&#34; ]; then echo &#34;latest&#34;; else echo $TRAVIS_BRANCH ; fi`
-COMMIT=${TRAVIS_COMMIT::8}
-
-docker --version
-pip install --user awscli
-export PATH=$PATH:$HOME/.local/bin
-eval $(aws ecr get-login --region us-east-1)
-
-docker build -t $DOCKER_REPO .
-
-docker tag $DOCKER_REPO $DOCKER_ECR/$DOCKER_REPO:$TAG
-docker push $DOCKER_ECR/$DOCKER_REPO:$TAG
-&lt;/pre&gt;
-
-&lt;h2&gt;Travis file&lt;/h2&gt;
-
-&lt;p&gt;To call this script, you can simply add it to the &lt;code&gt;after_success&lt;/code&gt; section in your &lt;code&gt;travis.yml&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;
-sudo: required
-language: node_js
-node_js:
-  - &#39;6&#39;
-services:
-  - docker
-env:
-  global:
-    - DOCKER_ECR=ACCOUNTID.dkr.ecr.us-east-1.amazonaws.com
-    - DOCKER_REPO=REPO_NAME
-after_success:
-  - ./deploy_ecr
-&lt;/pre&gt;
-
-&lt;p&gt;Don&amp;rsquo;t forget to set your &lt;code&gt;AWS_ACCESS_KEY_ID&lt;/code&gt; and &lt;code&gt;AWS_SECRET_ACCESS_KEY&lt;/code&gt; environment variables.&lt;/p&gt;
-
-&lt;h2&gt;IAM policy&lt;/h2&gt;
-
-&lt;p&gt;To allow your IAM user to acquire a temporary auth token for ECR, you&amp;rsquo;ll need to attach the following policy (or alternatively more fine grained if you want).&lt;/p&gt;
-
-&lt;pre&gt;
-{
-    &#34;Version&#34;: &#34;2012-10-17&#34;,
-    &#34;Statement&#34;: [{
-        &#34;Effect&#34;: &#34;Allow&#34;,
-        &#34;Action&#34;: [
-            &#34;ecr:GetAuthorizationToken&#34;
-        ],
-        &#34;Resource&#34;: [
-            &#34;*&#34;
-        ]
-    }]
-}
-&lt;/pre&gt;
-
-&lt;h2&gt;ECR repository permissions&lt;/h2&gt;
-
-&lt;p&gt;And to make things even more fun, you&amp;rsquo;ll also need to set a policy on your actual ECR repo. Below you can see an example policy specifying a &amp;lsquo;WritePolicy&amp;rsquo; for the IAM user you use to push your Docker images and a &amp;lsquo;ReadPolicy&amp;rsquo; for an EC2 instance role to get images. This is just an example and you should adapt this to your own needs.&lt;/p&gt;
-
-&lt;pre&gt;
-{
-    &#34;Version&#34;: &#34;2008-10-17&#34;,
-    &#34;Statement&#34;: [{
-        &#34;Sid&#34;: &#34;WritePolicy&#34;,
-        &#34;Effect&#34;: &#34;Allow&#34;,
-        &#34;Principal&#34;: {
-            &#34;AWS&#34;: &#34;arn:aws:iam::123456789:user/ecr-deployer&#34;
-        },
-        &#34;Action&#34;: [
-            &#34;ecr:DescribeRepositories&#34;,
-            &#34;ecr:GetRepositoryPolicy&#34;,
-            &#34;ecr:ListImages&#34;,
-            &#34;ecr:DescribeImages&#34;,
-            &#34;ecr:DeleteRepository&#34;,
-            &#34;ecr:BatchDeleteImage&#34;,
-            &#34;ecr:SetRepositoryPolicy&#34;,
-            &#34;ecr:DeleteRepositoryPolicy&#34;,
-            &#34;ecr:GetDownloadUrlForLayer&#34;,
-            &#34;ecr:BatchGetImage&#34;,
-            &#34;ecr:BatchCheckLayerAvailability&#34;,
-            &#34;ecr:PutImage&#34;,
-            &#34;ecr:InitiateLayerUpload&#34;,
-            &#34;ecr:UploadLayerPart&#34;,
-            &#34;ecr:CompleteLayerUpload&#34;
-        ]
-    }, {
-        &#34;Sid&#34;: &#34;ReadPolicy&#34;,
-        &#34;Effect&#34;: &#34;Allow&#34;,
-        &#34;Principal&#34;: {
-            &#34;AWS&#34;: [
-                &#34;arn:aws:iam::123456789:role/SomeServerRole&#34;
-            ]
-        },
-        &#34;Action&#34;: [
-            &#34;ecr:GetDownloadUrlForLayer&#34;,
-            &#34;ecr:BatchGetImage&#34;,
-            &#34;ecr:BatchCheckLayerAvailability&#34;
-        ]
-    }]
-}
-&lt;/pre&gt;
-
-&lt;p&gt;I think it&amp;rsquo;s a fairly easy setup and if you already pay for Travis, why not use it also to build your Docker images. I hope this little guide was helpful and you can enjoy your new Travis/ECR setup.&lt;/p&gt;
-</description>
+      <description>This article assumes that you&amp;rsquo;re generally familiar with Docker, Amazon IAM, Travis CI and some basic bash scripting.
+I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn&amp;rsquo;t give you a build environment liek Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.</description>
     </item>
     
     <item>
@@ -143,92 +26,7 @@ after_success:
       <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/five_hops_to_hitler/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;According to a fellow student, a general assumption exists, stating that almost no article on Wikipedia is more than five degrees seperated from the article about Adolf Hitler. To verify this assumption, I have analyzed the German Wikipedia and computed the shortest distance between all vertices and the vertex representing the article about Adolf Hitler. The result shows that 97.1% of all articles have a path length of ≤ 5.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;i-introduction&#34;&gt;I. Introduction&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;’No Wikipedia article is more than five degrees seperated from the article about Hitler.’
-– Diana&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This hypothesis was mentioned by my fellow student Diana during lunch at the TUM cafeteria. Remembering the ’Six Degrees of Seperation’ [1] and the ’Bacon Number’ [2], it sparked my interest in finding evidence for or against her statement.&lt;/p&gt;
-
-&lt;p&gt;To simplify computation, for this study I’ve reduced the dataset to article names and ingoing and outgoing internal links. Based on this extremely flat, but broad information structure we can already start answering some interesting questions when it comes to relatedness and importance of articles from the corpus.&lt;/p&gt;
-
-&lt;p&gt;We can for example compute the indegrees and outdegrees of nodes we’re interested in or determine the shortest path between nodes. To find evidence for the stated hypotheses, I’ve looked at the shortest path from all vertices in the graph to the vertex representing the article about ’Adolf Hitler’.&lt;/p&gt;
-
-&lt;h2 id=&#34;ii-data-and-methods&#34;&gt;II. Data and Methods&lt;/h2&gt;
-
-&lt;p&gt;Wikipedia itself is a conceptually perfect source to answer questions like ’How far away is X from Y?’. The concept of distance can be treated in different ways. One of the simplest ways is to treat the corpus of articles as an unweighted, directed graph structure. The vertices in our graph represent the articles and internal links are represented by the directed edges in between. The direction of edges follows the direction of hyperlinks.&lt;/p&gt;
-
-&lt;h3 id=&#34;a-dataset&#34;&gt;A. Dataset&lt;/h3&gt;
-
-&lt;p&gt;I’ve conducted the evaluation on the German edition Wikipedia as of December 2015. The dataset was acquired from a Wikipedia full &lt;a href=&#34;https://dumps.wikimedia.org/dewiki/20151201/dewiki-20151201-pages- articles.xml.bz2&#34;&gt;article dump&lt;/a&gt; and post processed with &lt;a href=&#34;https://github.com/mirkonasato/graphipedia&#34;&gt;Graphipedia&lt;/a&gt;, a tool to prepare Wikipedia dumps for import into a &lt;a href=&#34;http://www.neo4j.com&#34;&gt;Neo4j&lt;/a&gt; database.&lt;/p&gt;
-
-&lt;p&gt;The imported dataset contains 3,169,885 pages connected by 48,993,269 links. 6,466,688 broken links have been removed before and are not included in the tested dataset.&lt;/p&gt;
-
-&lt;h3 id=&#34;b-computation&#34;&gt;B. Computation&lt;/h3&gt;
-
-&lt;p&gt;For computing the results, Neo4j, a database designed for storing and querying graph structures has been used. Neo4j implements its own shortest path algorithm. The following query was used to compute the results.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MATCH (a:Page), (b:Page {title:’Adolf Hitler’}), p=shortestPath ((a)−[*..15]−&amp;gt;(b))
-RETURN size(nodes(p)), count(*);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Neo4j uses a Breadth-first search (BFS) algorithm to determine the shortest path when analyzing a directed, unweighted graph. BFS has a worst-case runtime complexity of &lt;code&gt;O(V + E)&lt;/code&gt; Where V is the total number of vertices and E is the total number of edges. The BFS for this study was configured to not include &amp;#8467; &amp;gt; 14.&lt;/p&gt;
-
-&lt;h2 id=&#34;iii-results&#34;&gt;III. Results&lt;/h2&gt;
-
-&lt;p&gt;From the total of 3,169,885 vertices, 97.1% have &amp;#8467; ≤ 5 to reach the article about ’Adolf Hitler’. For distribution see the following figures.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.iopanic.com/images/posts/hops.png&#34; alt=&#34;distribution&#34; /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Path length &amp;#8467;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;Vertices V(&amp;#8467;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1&lt;/td&gt;
-        &lt;td&gt;7,139&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;2&lt;/td&gt;
-        &lt;td&gt;805,640&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;3&lt;/td&gt;
-        &lt;td&gt;1,596,007&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;4&lt;/td&gt;
-        &lt;td&gt;648,934&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;5&lt;/td&gt;
-        &lt;td&gt;20,357&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;6&lt;/td&gt;
-        &lt;td&gt;189&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&#34;iv-conclusion&#34;&gt;IV. Conclusion&lt;/h2&gt;
-
-&lt;p&gt;The resulting numbers show, that 97.1% of German Wikipedia articles are less than 6 hops away from the article about ’Adolf Hitler’. Therefore we can conclude that the stated hypothesis is confirmed and the ’urban myth’ can be considered a fact.&lt;/p&gt;
-
-&lt;p&gt;Further interesting questions around this topic can be certainly asked. Especially since we’re looking at a topic that’s culturally extremely relevant for the community that created and maintains the analyzed Wikipedia corpus, it might be of interest to compare results with Wikipedia editions in other languages.&lt;/p&gt;
-
-&lt;p&gt;&lt;small&gt;____&lt;/p&gt;
-
-&lt;p&gt;[1] J. Guare, Six Degrees of Separation: A Play, Vintage Books, New York, 1990.&lt;br/&gt;
-[2] A. Ruthven, (April 7, 1994). Kevin Bacon is the Center of the Universe. &lt;a href=&#34;https://groups.google.com/d/topic/rec.arts.movies/-qNue6RwTn8/discussion&#34;&gt;https://groups.google.com/d/topic/rec.arts.movies/-qNue6RwTn8/discussion&lt;/a&gt;. Retrieved December 12, 2015.
-&lt;/small&gt;&lt;/p&gt;
-</description>
+      <description>According to a fellow student, a general assumption exists, stating that almost no article on Wikipedia is more than five degrees seperated from the article about Adolf Hitler. To verify this assumption, I have analyzed the German Wikipedia and computed the shortest distance between all vertices and the vertex representing the article about Adolf Hitler. The result shows that 97.1% of all articles have a path length of ≤ 5.</description>
     </item>
     
     <item>
@@ -237,28 +35,7 @@ RETURN size(nodes(p)), count(*);
       <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/applied_curiosity/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;http://imgs.xkcd.com/comics/questions.png&#34; alt=&#34;Questions&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As a kid, you probably looked at things and often asked yourself: Why? Why does my water pistol transform this lazy thing called water into a pressurized stream I can aim at my cat? And why is my cat not enjoying the free shower? When we look at the physical world, we see amazing things all the time. Laws of nature are repeatable. Everything we do is based on the understanding that a natural law is applicable anywhere in our universe.&lt;/p&gt;
-
-&lt;p&gt;After we internalized these laws, we derive expected outcomes whenever we see something that resembles a learned experience. But obviously there&amp;rsquo;s an error margin in the whole process. Consequently we just brush over most of the nuances and hidden variables, look at the expected (+/- error margin) and actual result, compare them, maybe adjust a bit - or not - and move on to the next thing.&lt;/p&gt;
-
-&lt;p&gt;But aren&amp;rsquo;t we missing something? Where is the excitement when your expensive BMW is figuring out that the car in front of you is not moving and exactly occupying the spot where you will be in 1s? Or when you look at the map on your 17&amp;rdquo; first class video screen, are you asking yourself why on earth none of the aircrafts ever seems to go in a straight line on longer distances?&lt;/p&gt;
-
-&lt;p&gt;Curiosity is what drives us. As kids we&amp;rsquo;re most curious because there&amp;rsquo;s just so many things we can&amp;rsquo;t pattern match yet. But what happens in school? We get hammered with all kinds of school book knowledge which is essentially nothing else than a text book way of feeding your brain with &amp;ldquo;If X then Y&amp;rdquo; statements. This is fundamentally wrong.&lt;/p&gt;
-
-&lt;p&gt;We need opportunities to ask questions and systems to stay curious beyond the childhood. Our school system and many families are horrible when it comes to teaching kids to ask questions. Most of the classes are occupied with teachers directing questions at students. It should be the other way round. Parents and the education system should open a window to the world and the universe. If they do, I&amp;rsquo;m almost certain that kids will start trying to understand the things they perceive on their own.&lt;/p&gt;
-
-&lt;h2 id=&#34;update-march-07-2016&#34;&gt;Update - March 07, 2016&lt;/h2&gt;
-
-&lt;p&gt;Nautilus Magazine recently published an interesting article on curiosity and how it&amp;rsquo;s emerging from what we already know: &lt;a href=&#34;http://nautil.us/issue/33/attraction/curiosity-depends-on-what-you-already-know&#34;&gt;Curiosity Depends on What You Already Know&lt;/a&gt; (by Zach St. George)&lt;/p&gt;
-
-&lt;p&gt;&lt;small&gt;____&lt;/p&gt;
-
-&lt;p&gt;Picture from &lt;a href=&#34;http://xkcd.com&#34;&gt;http://xkcd.com&lt;/a&gt; by Randall Munroe. Creative Commons Attribution-NonCommercial 2.5 License. &lt;/small&gt;&lt;/p&gt;
-</description>
+      <description>As a kid, you probably looked at things and often asked yourself: Why? Why does my water pistol transform this lazy thing called water into a pressurized stream I can aim at my cat? And why is my cat not enjoying the free shower? When we look at the physical world, we see amazing things all the time. Laws of nature are repeatable. Everything we do is based on the understanding that a natural law is applicable anywhere in our universe.</description>
     </item>
     
     <item>
@@ -267,159 +44,7 @@ RETURN size(nodes(p)), count(*);
       <pubDate>Thu, 28 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/docker_dusty/</guid>
-      <description>
-
-&lt;p&gt;I&amp;rsquo;ve seen hell, when it comes to software development and actual production environments. Inconsitent platforms, packages and a plethora of hacks to &amp;lsquo;get everything to work&amp;rsquo; on all developer machines. I&amp;rsquo;ve seen whole teams screwing with a shared &amp;lsquo;dev database&amp;rsquo; on a root server somewhere, creating a horrible mess of inconsistent behavior and ultimately slow down development and testing. This article will give you an overview how you can use Docker and Dusty to streamline your dev environments.&lt;/p&gt;
-
-&lt;p&gt;In production, we get a similar picture in many companies. A bunch of servers, running somewhere and a whole lot of custom bash scripts doing stuff no one really wants to know. Luckily we live in a world now where everyone has heard of Docker. With docker you can containerize everything and mix and match whatever you need.&lt;/p&gt;
-
-&lt;p&gt;The purpose of this post is not to give you an intro to Docker and Dusty, but to basically present you an example dev environment with some useful addons that help you with logging, monitoring and config management. If you don&amp;rsquo;t know about Dusty yet, read their excellent docs at &lt;a href=&#34;https://dusty.readthedocs.org&#34;&gt;https://dusty.readthedocs.org&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;developing-with-docker&#34;&gt;Developing with Docker&lt;/h2&gt;
-
-&lt;p&gt;Developing with Docker has always been a bit tricky. Sure, there&amp;rsquo;s Docker Compose and you can mount your code from your disk into your container. But it always seemed a bit messy and since there wasn&amp;rsquo;t any clean structure around developing in containerized environments it tended to get messy again.&lt;/p&gt;
-
-&lt;p&gt;Fortunately, the great folks at GameChanger came up with Dusty. A neat little tools that makes working with dockerized dev environments fun fun fun. Dusty allows you to configure your whole environment with yaml files (basically like docker compose) but adds useful components and structure to the whole thing. Especially mixing exactly the components you need and decide which code you want to mount into a containers is dead simple with Dusty.&lt;/p&gt;
-
-&lt;h2 id=&#34;get-started-with-dusty&#34;&gt;Get Started with Dusty&lt;/h2&gt;
-
-&lt;p&gt;Follow the Dusty install docs and set everything up. Once you&amp;rsquo;ve installed Dusty and all its requirements, run &lt;code&gt;$ dusty setup&lt;/code&gt; and follow the prompts. If you want to used my example repository, enter &lt;code&gt;github.com/marianzange/dusty-boilerplate&lt;/code&gt; as specs repo.&lt;/p&gt;
-
-&lt;p&gt;If you now run &lt;code&gt;$ dusty repos list&lt;/code&gt; you should see something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+----------------------------------------------------+-------------------------+----------------+
-|                     Full Name                      |        Short Name       | Local Override |
-+----------------------------------------------------+-------------------------+----------------+
-|      github.com/marianzange/dusty-boilerplate      |    dusty-boilerplate    |                |
-| github.com/marianzange/dusty-boilerplate-flask.git | dusty-boilerplate-flask |                |
-+----------------------------------------------------+-------------------------+----------------+
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The first repo contains our specs and the second repo our actual app. Now run &lt;code&gt;$ dusty bundles list&lt;/code&gt; to see the available bundles.
-If you want to run everything, activate them with &lt;code&gt;$ dusty bundles activate boilerplate&lt;/code&gt; and &lt;code&gt;$ dusty bundles activate devtools&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Well, and now it&amp;rsquo;s time to fire up the whole thing! Run &lt;code&gt;$ dusty up&lt;/code&gt; and watch the magic happen. Please note, that it can take ages for the environment to start up when you run
-it for the first time because it will pull all the docker images it needs. Subsequent starts will be super fast though.
-If everything is working, you should see something along these lines:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[...]
-Compiling together the assembled specs
-Compiling the port specs
-Compiling the nginx config
-Creating setup and script bash files
-Compiling docker-compose config
-Saving port forwarding to hosts file
-Configuring NFS
-Saving updated nginx config to the VM
-Saving Docker Compose config and starting all containers
-Warning: --allow-insecure-ssl is deprecated and has no effect.
-It will be removed in a future version of Compose.
-Creating dusty_dustyInternalNginx_1...
-Creating dusty_cadvisor_1...
-Creating dusty_etcd_1...
-Creating dusty_etcd-browser_1...
-Creating dusty_logio_1...
-Creating dusty_logio-harvester_1...
-Creating dusty_memcached_1...
-Creating dusty_postgres_1...
-Creating dusty_flask_1...
-Your local environment is now started!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now it&amp;rsquo;s time to access your awesome app. Open your browser and go to &lt;a href=&#34;http://flask.dusty-boilerplate.io&#34;&gt;http://flask.dusty-boilerplate.io&lt;/a&gt;.
-You should see an awesome website telling you how awesome Docker and Dusty are. If you&amp;rsquo;re now wondering
-why you can access your local container via dusty-boilerplate.io, it&amp;rsquo;s simple: Dusty runs and nginx
-proxy that automatically proxies all your requests to the correct container. This way you can use
-vanity URLs for local development. I would recommend using a standard compliant domain that&amp;rsquo;s not registered by anyone
-to avoid browser autocorrect etc.&lt;/p&gt;
-
-&lt;h2 id=&#34;specs-structure&#34;&gt;Specs Structure&lt;/h2&gt;
-
-&lt;p&gt;To work with Dusty, you need to create a specs repo. Specs are a simple set of yml files specifying how your environment looks like. My example specs repo (&lt;a href=&#34;https://github.com/marianzange/dusty-boilerplate&#34;&gt;https://github.com/marianzange/dusty-boilerplate&lt;/a&gt;) has the following structure:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.
-├── LICENSE
-├── apps
-│   ├── cadvisor.yml
-│   ├── etcd-browser.yml
-│   ├── flask.yml
-│   ├── logio-harvester.yml
-│   └── logio.yml
-├── bundles
-│   ├── boilerplate.yml
-│   └── devtools.yml
-├── libs
-└── services
-    ├── etcd.yml
-    ├── memcached.yml
-    ├── mysql.yml
-    ├── postgres.yml
-    └── solr.yml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In the example, the app we want to work with is called &amp;lsquo;flask&amp;rsquo;. It&amp;rsquo;s a simple Flask hello world example which is hosted here: &lt;a href=&#34;https://github.com/marianzange/dusty-boilerplate-flask&#34;&gt;https://github.com/marianzange/dusty-boilerplate-flask&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;managing-configurations-with-etcd&#34;&gt;Managing Configurations with etcd&lt;/h2&gt;
-
-&lt;p&gt;There are many different ways to manage configs. One of my favorite ways is etcd. It&amp;rsquo;s lightweight and you can use it locally and in production the same way.
-Since we&amp;rsquo;re trying to get a fully isolated mix-n-match development environment, our etcd is contained in our Dusty specs as a service.&lt;/p&gt;
-
-&lt;p&gt;Additionally we have an app called etcd-browser which allows you to populate your etcd key-value store with whatever settings you need.
-Now we just need our processes to pickup and monitor relavant values from etcd. To do this, I&amp;rsquo;m using etcdenv (&lt;a href=&#34;https://github.com/upfluence/etcdenv&#34;&gt;https://github.com/upfluence/etcdenv&lt;/a&gt;)
-which wraps your process and restarts it automatically if it detects changes to a specific subset of keys on etcd.&lt;/p&gt;
-
-&lt;p&gt;If you take a look at my example &lt;code&gt;apps/flask.yml&lt;/code&gt;, you&amp;rsquo;ll find the following configuration in the &amp;lsquo;commands&amp;rsquo; section:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;commands:
-  once:
-    - curl -L https://github.com/upfluence/etcdenv/releases/download/v0.3.1/etcdenv-linux-amd64-0.3.1 &amp;gt; /usr/local/bin/etcdenv
-    - chmod +x /usr/local/bin/etcdenv
-    - pip install -r requirements.txt
-  always:
-    # etcdenv wraps the the executed python process and provides the environment
-    # variables from etcd. In this example it looks for kv stored under
-    # /apps/boilerplate/flask and will restart the py process on any detected change.
-    - |
-      etcdenv \
-      -s http://etcd0:4001 \
-      -n /apps/boilerplate/flask \
-      -b restart \
-      python app.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As you can see, we get a built of etcdenv and write it to the container. Since this is a specific strategy for my development
-enviroment, it wouldn&amp;rsquo;t make sense to embed it in the docker app container. The main command for my container is etcdenv which wraps my app.py.
-Now, whenever I change anything on etcd in the &lt;code&gt;/apps/boilerplate/flask&lt;/code&gt; subset, etcdenv will automatically restart the wrapped process.&lt;/p&gt;
-
-&lt;p&gt;The nice parts is, you can use a fairly similar strategy to configure your production containers. So you can get pretty close to having
-the same configuration flow both on production and in development.&lt;/p&gt;
-
-&lt;p&gt;To add and change values in your etcd, my example repo comes with etcd-browser. Open &lt;a href=&#34;http://etcd.dusty-boilerplate.io&#34;&gt;http://etcd.dusty-boilerplate.io&lt;/a&gt; in your browser and enter &lt;code&gt;http://192.168.99.100:4001&lt;/code&gt; in
-the connect field. Now this is not very elegant to be honest. I couldn&amp;rsquo;t find the time to improve it though, so coming up with a better way for editing your etcd data is left as an exercise to the reader.&lt;/p&gt;
-
-&lt;p&gt;All etcd data is persisted, so no need to worry when restarting your etcd container.&lt;/p&gt;
-
-&lt;h2 id=&#34;logging&#34;&gt;Logging&lt;/h2&gt;
-
-&lt;p&gt;If you develop an application, you obviously want to have a realtime stream of relavant logs always open. There are multiple ways to do so with Dusty. Either your run &lt;code&gt;$ dusty logs app_name&lt;/code&gt; or you can aggregate your docker logs with log.io or another tool.&lt;/p&gt;
-
-&lt;p&gt;My boilerplate repo contains a &amp;lsquo;logio&amp;rsquo; and a &amp;lsquo;logio-server&amp;rsquo; app. The first one is a harvester, collecting everything it gets from Docker and the second one is the actual log.io server. If your environment with these apps is up and running, simply head to &lt;a href=&#34;http://logs.dusty-boilerplate.io&#34;&gt;http://logs.dusty-boilerplate.io&lt;/a&gt; and you&amp;rsquo;ll see a beautiful real-time aggregation of logs from your containers.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.iopanic.com/images/posts/docker-logio.jpg&#34; alt=&#34;log.io stream&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;monitoring&#34;&gt;Monitoring&lt;/h2&gt;
-
-&lt;p&gt;There are many moving parts in a development environment and sometimes you&amp;rsquo;re wondering why your CPU is suddenly feeling the heat.
-To get some quick insights into what going on with your containers, I&amp;rsquo;ve added Google CAdvisor (&lt;a href=&#34;https://github.com/google/cadvisor&#34;&gt;https://github.com/google/cadvisor&lt;/a&gt;) to the toolbox. CAdvisor
-shows you real-time stats about your docker containers and makes it easy to identify high level problems in case a containers goes haywire.&lt;/p&gt;
-
-&lt;p&gt;Just open up &lt;a href=&#34;http://cadvisor.dusty-boilerplate.io&#34;&gt;http://cadvisor.dusty-boilerplate.io&lt;/a&gt; and you&amp;rsquo;ll see some pretty graphs:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.iopanic.com/images/posts/cadvisor.jpg&#34; alt=&#34;CAdvisor&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I hope you found this article helpful. As I&amp;rsquo;ve mentioned earlier, it was not my intention to give an intro to Docker and Dusty,
-but present some opinionated aspects and additional tools that can help you when working with Docker and Dusty.&lt;/p&gt;
-</description>
+      <description>I&amp;rsquo;ve seen hell, when it comes to software development and actual production environments. Inconsitent platforms, packages and a plethora of hacks to &amp;lsquo;get everything to work&amp;rsquo; on all developer machines. I&amp;rsquo;ve seen whole teams screwing with a shared &amp;lsquo;dev database&amp;rsquo; on a root server somewhere, creating a horrible mess of inconsistent behavior and ultimately slow down development and testing. This article will give you an overview how you can use Docker and Dusty to streamline your dev environments.</description>
     </item>
     
     <item>
@@ -428,14 +53,8 @@ but present some opinionated aspects and additional tools that can help you when
       <pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/goodbye_ezeep/</guid>
-      <description>&lt;p&gt;For all of you who haven’t noticed yet, I’ve left ezeep at the end of December. As a co-founder it’s been a tough decision to leave, after joining forces with my two amazing co-founders nearly three years ago. Looking back, building ezeep was an incredible and fun challenge.&lt;/p&gt;
-
-&lt;p&gt;However, I started to feel that the direction ezeep is moving into and my own passions were drifting apart and that someone else would be able to fulfill the changed requirements much better than me. So back in summer (Northern hemisphere) I internally announced that I’d leave the company by the end of the year.&lt;/p&gt;
-
-&lt;p&gt;I’m writing this post from Wellington, New Zealand. I’ve moved to this wonderful country (at least for some time) to prepare for new challenges and opportunities ahead. I’ll post more about my upcoming plans and projects at the end of summer (Southern hemisphere).&lt;/p&gt;
-
-&lt;p&gt;For now it’s time to say goodbye and thank you to ‘team ezeep’ and everyone who’s been involved along the way. I’m very proud of what we’ve been able to achieve together.&lt;/p&gt;
-</description>
+      <description>For all of you who haven’t noticed yet, I’ve left ezeep at the end of December. As a co-founder it’s been a tough decision to leave, after joining forces with my two amazing co-founders nearly three years ago. Looking back, building ezeep was an incredible and fun challenge.
+However, I started to feel that the direction ezeep is moving into and my own passions were drifting apart and that someone else would be able to fulfill the changed requirements much better than me.</description>
     </item>
     
     <item>
@@ -444,19 +63,9 @@ but present some opinionated aspects and additional tools that can help you when
       <pubDate>Sat, 24 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/nsync/</guid>
-      <description>&lt;p&gt;NSA is running the largest and most secure free backup service ever built. Still I couldn’t find any proper command-line backup tool to quickly compress and send my files to their service. So I’ve decided to introduce nsync:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;nsync is an easy to use bash command-line tool to backup your files to NSA’s fully secure and free backup servers.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;This is a very early version of nsync. Due to the robustness of NSA’s data collection and storage systems it should be very reliable though. I hope you find this little tool as useful as I do. Contributions are very welcome.&lt;/p&gt;
-
-&lt;p&gt;More information and download via GitHub:
-&lt;a href=&#34;https://github.com/marianzange/nsync&#34;&gt;https://github.com/marianzange/nsync&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;—-&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://news.ycombinator.com/item?id=6268839&#34;&gt;Discuss on HackerNews&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
+      <description>NSA is running the largest and most secure free backup service ever built. Still I couldn’t find any proper command-line backup tool to quickly compress and send my files to their service. So I’ve decided to introduce nsync:
+nsync is an easy to use bash command-line tool to backup your files to NSA’s fully secure and free backup servers.
+This is a very early version of nsync. Due to the robustness of NSA’s data collection and storage systems it should be very reliable though.</description>
     </item>
     
     <item>
@@ -465,61 +74,8 @@ but present some opinionated aspects and additional tools that can help you when
       <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/xerox_printing/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;This article was originally published by me on the ezeep blog. Please note that ezeep, including it&amp;rsquo;s blog contents, has been acquired since then. Consequently this post might not appear on the ezeep blog anymore or might reference to a different author within ezeep&amp;rsquo;s new parent company.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;losing-the-hackers&#34;&gt;Losing The Hackers&lt;/h2&gt;
-
-&lt;p&gt;In the late 1970’s, Richard Stallman and his colleagues at the MIT Artificial Intelligence Lab were using one of the
-first XEROX Xerographic printers. The device was provided to the lab for free. Compared to current standards,
-the printer was extremely slow and constantly jammed. Additionally, print job transmission and caching were nowhere
-near to what it is today. Getting tired of the unreliability, Stallman decided to modify the printer’s software to
-send out a message to the person who tried to print whenever an error occurred, asking to fix the printer.
-This turned out to be a simple but effective method to reduce the number of issues and let everyone work more efficiently.&lt;/p&gt;
-
-&lt;p&gt;A few years later, Stallman and his colleagues received a new printer from XEROX. The device turned out to be much
-faster and much more reliable than the old one. It just came with one tiny flaw: The software for that printer only
-came in binary form and the source code was held under non-disclosure by XEROX. Now the AI Lab folks weren’t able
-to adapt the software to their needs. This is considered as Stallman’s key experience that made him believe that
-software should be freely available and open for everyone to modify.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;While corporations dominate society and write the laws, each advance in technology is an opening for them to further
-restrict its users. -– Stallman’s Law&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;XEROX is only an example for the whole industry. Look at HP, Samsung etc. and you’ll see the same behavior all over
-the place. You can read the whole story about Richard Stallman’s eye opening printer experience here:
-&lt;a href=&#34;http://oreilly.com/openbook/freedom/ch01.html&#34;&gt;http://oreilly.com/openbook/freedom/ch01.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;an-innovation-free-zone&#34;&gt;An Innovation-Free Zone&lt;/h2&gt;
-
-&lt;p&gt;Stallman wrote his little paper jam notifier 30 years ago. Even today, printer status information for most devices is
-still notoriously unreliable. There hasn’t been a lot of innovation in printing since the early days. Because of its
-‘cash-cow’ status, all major device manufacturers have kept most of their software and hardware designs behind closed
-doors. So they can continue selling overpriced parts, consumables and services in a locked-in, proprietary world.
-After some back and forth even Microsoft started supporting people hacking their Kinect controller. In printing
-(besides CUPS) pretty much nothing has been made publicly available.&lt;/p&gt;
-
-&lt;p&gt;After all, printing is still occupying a very large space in technology and sadly takes the bottom spot in innovation.
-Printing is a tool for exchanging, archiving, annotating and sharing information between people. External innovations
-like e-books or tablets solve parts of the same problem. Each of those deal with a particular issue, but don’t address
-the same wide scope printing does. Interestingly, there’s barely any innovation coming out of the printing space itself.&lt;/p&gt;
-
-&lt;h2 id=&#34;breaking-the-rules&#34;&gt;Breaking the Rules&lt;/h2&gt;
-
-&lt;p&gt;At ezeep, we’re dealing with all the proprietary parts of printing every day and are in a constant battle to build an
-abstraction layer on top of those closed legacy systems. This turned out to be an incredibly hard challenge and made
-us think a lot about how we could contribute to improve the situation for everyone and start uncluttering the
-printing/printers industry.&lt;/p&gt;
-
-&lt;p&gt;We believe that open source, transparency and the free flow of information is the right way to spark and catalyze
-innovation. During the next few months we will start contributing first bits and pieces of code we’ve written and
-knowledge we’ve acquired to the community in the hope of kicking-off a new and open era of printing. But we can’t
-achieve this alone. We’ll need your support to turn the most closed and innovation-unfriendly technology into
-something open that actually improves people’s life and work.&lt;/p&gt;
-</description>
+      <description>This article was originally published by me on the ezeep blog. Please note that ezeep, including it&amp;rsquo;s blog contents, has been acquired since then. Consequently this post might not appear on the ezeep blog anymore or might reference to a different author within ezeep&amp;rsquo;s new parent company.
+Losing The Hackers In the late 1970’s, Richard Stallman and his colleagues at the MIT Artificial Intelligence Lab were using one of the first XEROX Xerographic printers.</description>
     </item>
     
     <item>
@@ -528,28 +84,7 @@ something open that actually improves people’s life and work.&lt;/p&gt;
       <pubDate>Thu, 18 Jul 2013 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/shaped_by_algorithms/</guid>
-      <description>
-
-&lt;h2 id=&#34;gaining-certainty-through-abstraction&#34;&gt;Gaining Certainty Through Abstraction&lt;/h2&gt;
-
-&lt;p&gt;Technology has always shaped how we interact with the world and the people around us. Let’s start off with a very simple example: When the first bridges were built, the engineering part was a great achievement, but the idea of building a bridge is less about solving engineering problems just for the sake of solving them. Building a bridge is in it’s very essential core about connecting people. A bridge gives people a safe way to the other side of an obstacle like a water stream or a dangerous canyon.&lt;/p&gt;
-
-&lt;p&gt;This means it ultimately removes a big part of uncertainty from the process of crossing the obstacle and adds a layer of predictability. Now you can predict under high certainty that you’ll reach the other side and how long it’s gonna take. But why can we suddenly predict things under higher certainty? When you look at it, the bridge removes complexity from the contextual situation you’re facing when crossing that stream. Before you had to think about currents, water depths, sea monsters, winds and perhaps about choosing the right boat (a boat is already a simplification).&lt;/p&gt;
-
-&lt;p&gt;All these different dimensions of uncertainty are still there after building the bridge but you don’t have to face them anymore. The bridge acts as an abstraction layer between you and a more or less significant fragment of the world around you. The engineers who have built the bridge, reduced your uncertainty regarding a set of challenges by not removing the uncertainty from the challenges themselves, but by building an abstraction layer between you and the original challenge.&lt;/p&gt;
-
-&lt;h2 id=&#34;predictions-alter-reality-your-reality&#34;&gt;Predictions Alter Reality - Your Reality&lt;/h2&gt;
-
-&lt;p&gt;When you keep extending my little thought experiment, you’ll probably notice that we’re living in a world of extremely high abstraction. Last weekend I traveled to Copenhagen for a little bit more than 24 hours. The biggest challenge I had to face was my quickly draining smartphone battery. So I’m in another country and all I think about is my phone battery. That’s sad, but everything else ended up being highly predictable though the lens of technology.&lt;/p&gt;
-
-&lt;p&gt;I’m quite a heavy Foursquare user and use it to find interesting places, especially when I’m in a new city. Foursquare’s recommender selects the right cafe’s for me, makes sure I don’t run into a bad experience by filtering out bad restaurants and links me up to Google Maps which directs me to all those places. Technology in this example is abstracting between me and the dangers of having a bad meal or ending up in a bad neighborhood (however you define bad).&lt;/p&gt;
-
-&lt;p&gt;So Foursquare and a bridge are not that different. They both abstract to a challenge and remove uncertainty in the process of reaching your goal. The primary difference between a bridge and Foursquare is that most bridge’s don’t adapt to you based on your behavior. Modern machine learning systems instead often sport already quite sophisticated algorithms and pour your behavior into relatively well working models. Questionable here is, that these models are usually proprietary and designed with a certain goal in mind, that very likely doesn’t match your personal goal for that specific context.&lt;/p&gt;
-
-&lt;p&gt;I’m most certainly the last person who would start a movement against AI and advanced algorithm development because I believe in the basic principle of removing uncertainty and improving life through science and engineering. But still I want to raise awareness that the most powerful tools that directly shape how we act in real-life are proprietary black-boxes. This poses a great danger to society and every individual because predictions alter reality. Once Google or Foursquare tells you, that you most likely won’t enjoy a place, even if you end up going there, you will be prejudiced and act and experience in a different way.&lt;/p&gt;
-
-&lt;p&gt;It’s convenient to live in a highly abstracted world. Just keep in mind, that the more abstraction layers you add, the more you loose touch with the underlying problems. In life this means a black-boxed set of algorithms is channeling you through life. In engineering this means you’ll end up solving abstractions of abstractions while forgetting to address the actual problem.&lt;/p&gt;
-</description>
+      <description>Gaining Certainty Through Abstraction Technology has always shaped how we interact with the world and the people around us. Let’s start off with a very simple example: When the first bridges were built, the engineering part was a great achievement, but the idea of building a bridge is less about solving engineering problems just for the sake of solving them. Building a bridge is in it’s very essential core about connecting people.</description>
     </item>
     
     <item>
@@ -558,10 +93,8 @@ something open that actually improves people’s life and work.&lt;/p&gt;
       <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/post/commiting_code/</guid>
-      <description>&lt;p&gt;Cool, isn’t it? I stole the idea from Victor Martinez (&lt;a href=&#34;http://coderwall.com/p/xlatfq&#34;&gt;http://coderwall.com/p/xlatfq&lt;/a&gt;) who fully deserves the credit for me annoying the web with this video.&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;https://www.youtube.com/embed/u19_4GF0v5Q&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-</description>
+      <description>Cool, isn’t it? I stole the idea from Victor Martinez (http://coderwall.com/p/xlatfq) who fully deserves the credit for me annoying the web with this video.
+ </description>
     </item>
     
   </channel>
