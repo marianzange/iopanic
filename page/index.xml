@@ -2,10 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on iopanic</title>
-    <link>http://www.iopanic.com/page/index.xml</link>
+    <link>http://www.iopanic.com/page/</link>
     <description>Recent content in Pages on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <atom:link href="http://www.iopanic.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.iopanic.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hello, I&#39;m Marian.</title>
@@ -13,16 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://www.iopanic.com/page/about/</guid>
-      <description>&lt;p&gt;My cat looks something like this. Or maybe it doesn&amp;rsquo;t. Who knows&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.iopanic.com/images/particle_disposal.jpg&#34; alt=&#34;Schroedinger&#39;s cat feeding on top quarks&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m a freelance software engineer and devops expert with more than 10 years of experience. I&amp;rsquo;m mostly focused on architecting complex systems and processes. But I also do a lot of hands on coding across the entire spectrum from mobile to algorithms. In the past I&amp;rsquo;ve co-founded several venture capital backed technology startups, the last one being &lt;i&gt;ezeep&lt;/i&gt;, a cloud printing service (acquired by Cortado). Besides my work, one of my main interests is high energy physics, especially neutrino physics.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m currently not available to join any projects, but feel free to contact me. You never know what the future might bring. And please, be one of the cool kids and use my PGP key.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Email me at &lt;a href=&#34;mailto:marian@crashpad.io&#34;&gt;&lt;b&gt;marian@crashpad.io&lt;/b&gt;&lt;/a&gt; &lt;a href=&#34;http://pgp.mit.edu/pks/lookup?op=get&amp;search=0x96F425FA638EE11F&#34;&gt;(PGP Public Key)&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
-</description>
+      <description>My cat looks something like this. Or maybe it doesn&amp;rsquo;t. Who knows&amp;hellip;
+I&amp;rsquo;m a senior software consultant and devops expert with more than 10 years of experience. I&amp;rsquo;m mostly focused on architecting software and evolving its underlying infrastructure - both technical and human components. But I also do a lot of hands on work across the entire spectrum from mobile to algorithms. In the past I&amp;rsquo;ve co-founded several venture capital backed technology startups, the last one being ezeep, a cloud printing service (acquired by Cortado).</description>
     </item>
     
   </channel>
