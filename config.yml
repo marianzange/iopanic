@@ -13,5 +13,8 @@ menu:
       - Name: "About"
         Identifier: "about-me"
         URL: "/page/about/"
+      - Name: "Contact"
+        Identifier: "contact"
+        URL: "/page/contact/"
 title: "iopanic"
 canonifyurls: true
