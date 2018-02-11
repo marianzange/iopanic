@@ -12,7 +12,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 2.3em;
+    font-size: 1.9em;
 }
 
 h2:first-child {
@@ -64,17 +64,59 @@ p > img {
     float: left;
 }
 
-.img-circular{
+.bubble {
+	position: relative;
+  margin: 0 auto;
+  color: #fff;
+  max-width: 300px;
+	background: #5890ff;
+  padding: 14px;
+}
+
+.bubble:after {
+  content: '';
+  	position: absolute;
+  	bottom: 0;
+  	left: 50%;
+  	width: 0;
+  	height: 0;
+	border: 18px solid transparent;
+	border-top-color: #5890ff;
+  border-bottom: 0;
+	margin-left: -18px;
+	margin-bottom: -18px;
+}
+
+.img-profile {
   text-align: center;
   display: inline-block;
-  margin: 10px 0 24px 0;
-   width: 200px;
+  margin: 20px 0 18px 0;
+  width: 200px;
    height: 200px;
    background-image: url('https://avatars0.githubusercontent.com/u/573019?s=460&v=4');
    background-size: cover;
    border-radius: 100px;
    -webkit-border-radius: 100px;
    -moz-border-radius: 100px;
+}
+
+button {
+  background-color: #5890ff;
+  color: #fff;
+  border: 0;
+  padding: 8px 18px;
+}
+
+button:hover {
+  background-color: #2d4dd1;
+  font-weight: normal;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.btn-contact {
+  margin-top: 20px;
+  margin-bottom: 8px;
 }
 
 /* Grid
@@ -225,13 +267,14 @@ a:visited {
     color: #5890ff;
     font-weight: normal;
     text-decoration: none;
-    -webkit-transition: color 0.5s;
-    transition: color 0.5s;
 }
 
 a:hover {
     color: #2d4dd1;
     font-weight: normal;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+    text-decoration: underline;
 }
 
 /** Article *****************************************************************/
