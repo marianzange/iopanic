@@ -5,7 +5,7 @@ layout = "centered"
 
 <div class="img-profile"></div>
 
-*In spirit of the fundamental human trait to reach beyond the obvious, my mission is to help society evolving collaboration in science and technology.*
+*In spirit of the fundamental human desire to reach beyond the obvious, my mission is to help society evolving collaboration in science and technology.*
 
 I'm an entrepreneur and technical lead with more than 10 years of experience. My current venture is taking shape quickly, but is still unannounced. Check back soon to see what we've been up to.
 
