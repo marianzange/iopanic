@@ -90,14 +90,15 @@ p > img {
 .img-profile {
   text-align: center;
   display: inline-block;
-  margin: 20px 0 18px 0;
-  width: 200px;
-   height: 200px;
+  margin: 10px 0 18px 0;
+  border: 6px solid #efefef;
+  width: 180px;
+   height: 180px;
    background-image: url('https://avatars0.githubusercontent.com/u/573019?s=460&v=4');
    background-size: cover;
-   border-radius: 100px;
-   -webkit-border-radius: 100px;
-   -moz-border-radius: 100px;
+   border-radius: 140px;
+   -webkit-border-radius: 140px;
+   -moz-border-radius: 140px;
 }
 
 button {
@@ -210,7 +211,6 @@ button:hover {
 
 .li-page-header {
     color: #CD0070;
-    background: #f3f3f3;
     padding: 5px 0px;
 }
 
@@ -336,6 +336,7 @@ ul.li-article-list {
 }
 
 .li-page-footer {
+    text-align: center;
     font-size: smaller;
     padding: 32px 0px 32px 0px;
 }
@@ -363,7 +364,7 @@ ul.li-article-list {
 /** Mobile Portrait (320px) **************************************************/
 @media only screen and (max-width: 767px) {
     .li-page-header {
-        padding: 16px 0px;
+        padding: 0px 0px;
     }
 
     .li-main-article-list {
@@ -374,7 +375,7 @@ ul.li-article-list {
         cursor: pointer;
         display: block;
         float: right;
-        line-height: 30px;
+        line-height: 40px;
     }
 
     .li-page-header .li-menu-items {
@@ -390,7 +391,7 @@ ul.li-article-list {
 
     .li-page-header .li-menu-items li {
         margin-left: 0px;
-        padding: 12px 0px;
+        padding: 8px 0px;
         text-align: center;
         width: 100%;
     }
