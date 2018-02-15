@@ -2,9 +2,14 @@
 <html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <meta name="author" content="Marian Zange" />
+  {{ if .IsHome }}
+  <title>Marian Zange &middot; {{ .Site.Title }}</title>
+  <meta name="description" content="I'm working on evolving collaboration in science and technology. This is my blog where I sometimes write about related topics." />
+  {{ else }}
+  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  {{ end }}
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/libraries/normalize.3.0.1.css" />
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
