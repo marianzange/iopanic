@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Complex Systems on iopanic</title>
-    <link>http://www.iopanic.com/categories/complex-systems/</link>
+    <link>https://www.iopanic.com/categories/complex-systems/</link>
     <description>Recent content in Complex Systems on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 18 Jul 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.iopanic.com/categories/complex-systems/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.iopanic.com/categories/complex-systems/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>You’re Shaped By Algorithms</title>
-      <link>http://www.iopanic.com/post/shaped_by_algorithms/</link>
+      <link>https://www.iopanic.com/post/shaped_by_algorithms/</link>
       <pubDate>Thu, 18 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/shaped_by_algorithms/</guid>
+      <guid>https://www.iopanic.com/post/shaped_by_algorithms/</guid>
       <description>Gaining Certainty Through Abstraction Technology has always shaped how we interact with the world and the people around us. Let’s start off with a very simple example: When the first bridges were built, the engineering part was a great achievement, but the idea of building a bridge is less about solving engineering problems just for the sake of solving them. Building a bridge is in it’s very essential core about connecting people.</description>
     </item>
     

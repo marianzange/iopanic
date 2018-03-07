@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Education on iopanic</title>
-    <link>http://www.iopanic.com/categories/education/</link>
+    <link>https://www.iopanic.com/categories/education/</link>
     <description>Recent content in Education on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 28 Feb 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.iopanic.com/categories/education/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.iopanic.com/categories/education/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Applied Curiosity</title>
-      <link>http://www.iopanic.com/post/applied_curiosity/</link>
+      <link>https://www.iopanic.com/post/applied_curiosity/</link>
       <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/applied_curiosity/</guid>
+      <guid>https://www.iopanic.com/post/applied_curiosity/</guid>
       <description>As a kid, you probably looked at things and often asked yourself: Why? Why does my water pistol transform this lazy thing called water into a pressurized stream I can aim at my cat? And why is my cat not enjoying the free shower? When we look at the physical world, we see amazing things all the time. Laws of nature are repeatable. Everything we do is based on the understanding that a natural law is applicable anywhere in our universe.</description>
     </item>
     

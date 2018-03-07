@@ -2,67 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on iopanic</title>
-    <link>http://www.iopanic.com/post/</link>
+    <link>https://www.iopanic.com/post/</link>
     <description>Recent content in Posts on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 22 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.iopanic.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.iopanic.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Building and deploying docker images from Travis to ECR</title>
-      <link>http://www.iopanic.com/post/deploying_to_ecr_from_travis/</link>
+      <link>https://www.iopanic.com/post/deploying_to_ecr_from_travis/</link>
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/deploying_to_ecr_from_travis/</guid>
+      <guid>https://www.iopanic.com/post/deploying_to_ecr_from_travis/</guid>
       <description>This article assumes that you&amp;rsquo;re generally familiar with Docker, Amazon IAM, Travis CI and some basic bash scripting.
 I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn&amp;rsquo;t give you a build environment liek Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.</description>
     </item>
     
     <item>
       <title>Five Hops To Hitler</title>
-      <link>http://www.iopanic.com/post/five_hops_to_hitler/</link>
+      <link>https://www.iopanic.com/post/five_hops_to_hitler/</link>
       <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/five_hops_to_hitler/</guid>
+      <guid>https://www.iopanic.com/post/five_hops_to_hitler/</guid>
       <description>According to a friend, a common assumption exists, stating that almost no article on Wikipedia is more than five degrees separated from the article about Adolf Hitler. To verify this assumption, I have analyzed the German Wikipedia and computed the shortest distance between all vertices and the vertex representing the article about Adolf Hitler. The result shows that 97.1% of all articles have a path length of ≤ 5.</description>
     </item>
     
     <item>
       <title>Applied Curiosity</title>
-      <link>http://www.iopanic.com/post/applied_curiosity/</link>
+      <link>https://www.iopanic.com/post/applied_curiosity/</link>
       <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/applied_curiosity/</guid>
+      <guid>https://www.iopanic.com/post/applied_curiosity/</guid>
       <description>As a kid, you probably looked at things and often asked yourself: Why? Why does my water pistol transform this lazy thing called water into a pressurized stream I can aim at my cat? And why is my cat not enjoying the free shower? When we look at the physical world, we see amazing things all the time. Laws of nature are repeatable. Everything we do is based on the understanding that a natural law is applicable anywhere in our universe.</description>
     </item>
     
     <item>
       <title>Get your sh*t together: Docker development environments with Dusty</title>
-      <link>http://www.iopanic.com/post/docker_dusty/</link>
+      <link>https://www.iopanic.com/post/docker_dusty/</link>
       <pubDate>Thu, 28 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/docker_dusty/</guid>
+      <guid>https://www.iopanic.com/post/docker_dusty/</guid>
       <description>I&amp;rsquo;ve seen hell, when it comes to software development and actual production environments. Inconsitent platforms, packages and a plethora of hacks to &amp;lsquo;get everything to work&amp;rsquo; on all developer machines. I&amp;rsquo;ve seen whole teams screwing with a shared &amp;lsquo;dev database&amp;rsquo; on a root server somewhere, creating a horrible mess of inconsistent behavior and ultimately slow down development and testing. This article will give you an overview how you can use Docker and Dusty to streamline your dev environments.</description>
     </item>
     
     <item>
       <title>Goodbye ezeep!</title>
-      <link>http://www.iopanic.com/post/goodbye_ezeep/</link>
+      <link>https://www.iopanic.com/post/goodbye_ezeep/</link>
       <pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/goodbye_ezeep/</guid>
+      <guid>https://www.iopanic.com/post/goodbye_ezeep/</guid>
       <description>For all of you who haven’t noticed yet, I’ve left ezeep at the end of December. As a co-founder it’s been a tough decision to leave, after joining forces with my two amazing co-founders nearly three years ago. Looking back, building ezeep was an incredible and fun challenge.
 However, I started to feel that the direction ezeep is moving into and my own passions were drifting apart and that someone else would be able to fulfill the changed requirements much better than me.</description>
     </item>
     
     <item>
       <title>nsync - A command-line tool for NSA’s backup services</title>
-      <link>http://www.iopanic.com/post/nsync/</link>
+      <link>https://www.iopanic.com/post/nsync/</link>
       <pubDate>Sat, 24 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/nsync/</guid>
+      <guid>https://www.iopanic.com/post/nsync/</guid>
       <description>NSA is running the largest and most secure free backup service ever built. Still I couldn’t find any proper command-line backup tool to quickly compress and send my files to their service. So I’ve decided to introduce nsync:
 nsync is an easy to use bash command-line tool to backup your files to NSA’s fully secure and free backup servers.
 This is a very early version of nsync. Due to the robustness of NSA’s data collection and storage systems it should be very reliable though.</description>
@@ -70,29 +70,29 @@ This is a very early version of nsync. Due to the robustness of NSA’s data col
     
     <item>
       <title>How XEROX Invented (and Killed) Printing</title>
-      <link>http://www.iopanic.com/post/xerox_printing/</link>
+      <link>https://www.iopanic.com/post/xerox_printing/</link>
       <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/xerox_printing/</guid>
+      <guid>https://www.iopanic.com/post/xerox_printing/</guid>
       <description>This article was originally published by me on the ezeep blog. Please note that ezeep, including it&amp;rsquo;s blog contents, has been acquired since then. Consequently this post might not appear on the ezeep blog anymore or might reference to a different author within ezeep&amp;rsquo;s new parent company.
 Losing The Hackers In the late 1970’s, Richard Stallman and his colleagues at the MIT Artificial Intelligence Lab were using one of the first XEROX Xerographic printers.</description>
     </item>
     
     <item>
       <title>You’re Shaped By Algorithms</title>
-      <link>http://www.iopanic.com/post/shaped_by_algorithms/</link>
+      <link>https://www.iopanic.com/post/shaped_by_algorithms/</link>
       <pubDate>Thu, 18 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/shaped_by_algorithms/</guid>
+      <guid>https://www.iopanic.com/post/shaped_by_algorithms/</guid>
       <description>Gaining Certainty Through Abstraction Technology has always shaped how we interact with the world and the people around us. Let’s start off with a very simple example: When the first bridges were built, the engineering part was a great achievement, but the idea of building a bridge is less about solving engineering problems just for the sake of solving them. Building a bridge is in it’s very essential core about connecting people.</description>
     </item>
     
     <item>
       <title>Me. Commiting Code.</title>
-      <link>http://www.iopanic.com/post/commiting_code/</link>
+      <link>https://www.iopanic.com/post/commiting_code/</link>
       <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.iopanic.com/post/commiting_code/</guid>
+      <guid>https://www.iopanic.com/post/commiting_code/</guid>
       <description>Cool, isn’t it? I stole the idea from Victor Martinez (http://coderwall.com/p/xlatfq) who fully deserves the credit for me annoying the web with this video.
  </description>
     </item>
