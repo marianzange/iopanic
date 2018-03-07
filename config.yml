@@ -7,7 +7,7 @@ layoutdir: "layouts"
 publishdir: "public"
 indexes:
   category: "categories"
-baseurl: "http://www.iopanic.com/"
+baseurl: "https://www.iopanic.com/"
 menu:
   main:
       - Name: "About"
