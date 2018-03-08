@@ -13,5 +13,8 @@ menu:
       - Name: "About"
         Identifier: "about-me"
         URL: "/page/about/"
+      - Name: "Keybase"
+        Identifier: "keybase"
+        URL: "https://keybase.io/iopanic"
 title: "iopanic"
 canonifyurls: true
