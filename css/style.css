@@ -101,16 +101,23 @@ p > img {
    -moz-border-radius: 140px;
 }
 
-button {
+button, .cc-btn {
   background-color: #5890ff;
   color: #fff;
+  font-weight: normal;
   border: 0;
   padding: 8px 18px;
 }
 
-button:hover {
+.cc-theme-classic .cc-btn {
+  border-radius: 0;
+}
+
+button:hover, .cc-btn:hover {
   background-color: #2d4dd1;
   font-weight: normal;
+  color: #fff;
+  text-decoration: none;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
