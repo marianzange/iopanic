@@ -6,7 +6,7 @@
     <div class="sixteen columns">
       <div class="li-main-article-list">
 
-        {{ range first 10 .Data.Pages }}
+        {{ range first 20 .Data.Pages }}
         {{ if eq .Section "post" }}
         <div class="li-article">
           {{ .Render "summary"}}
