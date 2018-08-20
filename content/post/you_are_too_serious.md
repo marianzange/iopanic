@@ -5,6 +5,7 @@ description: "After a wild startup ride with Liquid Labs in Boston last year, I 
 aliases:
 - "/what-going-on-here"
 - "/post/39747628779/you-are-too-serious-or-why-germany-still-sucks-for"
+- "/post/39747628779/you-are-too-serious-or-why-germany-still-sucks-"
 ---
 
 After a wild startup ride with Liquid Labs in Boston last year, I moved to Berlin recently and have joined ezeep as CTO. Right before I left Cambridge I gave a little seminar about the differences in European and US startup culture at MIT E-Club. An interesting discussion evolved in the seminar and finally I found some time to write a little post about the question why European startups (I will focus on Germany) still face trouble to form global market leaders like Facebook or Google.
