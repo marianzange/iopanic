@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <meta name="author" content="Marian Zange" />
   
-  <title>Software Engineering &middot; iopanic</title>
+  <title>Signing Coinbase Pro requests with Postman &middot; iopanic</title>
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
   <link rel="stylesheet" href="https://www.iopanic.com//libraries/normalize.3.0.1.css" />
@@ -64,31 +64,47 @@
 </header>
 
 
-    <div class="container">
-        <div class="row">
-            <div class="sixteen columns">
-                <h1>Software Engineering</h1>
-                <ul class="li-article-list">
-                    
-                        <li>
-                            <time class="li-article-date">August, 20, 2018</time>
-                            <h4><a href="https://www.iopanic.com/post/coinbase_pro_hmac_postman/">Signing Coinbase Pro requests with Postman</a></h4>
-                        </li>
-                    
-                        <li>
-                            <time class="li-article-date">December, 22, 2016</time>
-                            <h4><a href="https://www.iopanic.com/post/deploying_to_ecr_from_travis/">Building and deploying docker images from Travis to ECR</a></h4>
-                        </li>
-                    
-                        <li>
-                            <time class="li-article-date">January, 28, 2016</time>
-                            <h4><a href="https://www.iopanic.com/post/docker_dusty/">Get your sh*t together: Docker development environments with Dusty</a></h4>
-                        </li>
-                    
-                </ul>
-            </div>
-        </div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="sixteen columns">
+      <article class="li-article">
+        <header class="li-article-header">
+          <h1 class="li-article-title">Signing Coinbase Pro requests with Postman</h1>
+                        <span class="li-article-taxonomies">
+                            
+                                Posted in
+                                
+                                    <a href="https://www.iopanic.com/categories/software-engineering">Software Engineering</a>
+                                
+                                    <a href="https://www.iopanic.com/categories/cryptocurrency">Cryptocurrency</a>
+                                
+                            
+                        </span>
+           - 
+          <time class="li-article-date">Monday, August 20, 2018</time>
+        </header>
+        <section>
+          <p>For running some tests against the GDAX/Coinbase Pro API, I needed to send properly
+signed requests with Postman. To achieve this, I&rsquo;ve created the short pre-request script below that
+you can easily add to your Postman collection. More information about signing Coinbase Pro API
+messages can be found in their <a href="https://docs.pro.coinbase.com/#signing-a-message">documentation</a>.</p>
+
+<p>You might want to adapt the variable names and URL path regex according to your needs. Also, don&rsquo;t
+forget that you still need to set the proper headers in your request resource. The code below
+obviously also works outside Postman.</p>
+
+<script src="https://gist.github.com/marianzange/354edb2f74e88491f6fa520ea8beb2d8.js"></script>
+
+        </section>
+      </article>
     </div>
+  </div>
+
+</div>
 
 <footer class="li-page-footer">
   <div class="container">
@@ -128,4 +144,3 @@ Blog posts are licensed under <a rel="license" href="http://creativecommons.org/
     </script>
     </body>
 </html>
-
