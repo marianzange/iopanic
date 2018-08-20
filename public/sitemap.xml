@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.iopanic.com/post/coinbase_pro_hmac_postman/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.iopanic.com/post/deploying_to_ecr_from_travis/</loc>
     <lastmod>2016-12-22T00:00:00+00:00</lastmod>
   </url>
@@ -59,6 +64,12 @@
   </url>
   
   <url>
+    <loc>https://www.iopanic.com/categories/cryptocurrency/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.iopanic.com/categories/devops/</loc>
     <lastmod>2016-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -93,7 +104,7 @@
   
   <url>
     <loc>https://www.iopanic.com/post/</loc>
-    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -105,13 +116,13 @@
   
   <url>
     <loc>https://www.iopanic.com/categories/software-engineering/</loc>
-    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.iopanic.com/</loc>
-    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
