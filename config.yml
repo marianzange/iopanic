@@ -16,5 +16,8 @@ menu:
       - Name: "Keybase"
         Identifier: "keybase"
         URL: "https://keybase.io/iopanic"
+      - Name: "Github"
+        Identifier: "github"
+        URL: "https://github.com/marianzange"
 title: "iopanic"
 canonifyurls: true
