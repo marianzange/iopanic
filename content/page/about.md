@@ -5,7 +5,7 @@ layout = "centered"
 
 <div class="img-profile"></div>
 
-I'm co-founder and technical researcher at <a href="https://www.5to3.io">5to3</a>, a non-profit dedicated to improving the scientific process and the preservation and safeguarding of research data for future generations. My current work focus is on researching resilient, decentralized protocols to enable stable mixed environments that combine classic institutional trust models with trustless, highly distributed systems.
+I’m a freelance technical consultant and software engineer, focused on complex systems, infrastructure and software engineering operations. Besides this, I'm co-founder of <a href="https://www.5to3.io">5to3</a>, a non-profit dedicated to improving the scientific process and the preservation and safeguarding of research data. With 5to3, I'm researching decentralized protocols that allow elevating classic institutional trust models into trustless and self-governed systems.
 
 Past companies I've co-founded include <a href="http://www.ezeep.com">ezeep</a>, a cloud printing service for education and enterprises (acquired by Cortado AG) and <a href="https://angel.co/liquid-labs">Liquid Labs</a>, a formerly Cambridge, MA based startup focused on natural language processing - primarily text summarization and clustering. I've also been involved in a variety of other projects in both, software engineering and consulting roles.
 
