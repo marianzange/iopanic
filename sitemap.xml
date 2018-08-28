@@ -63,10 +63,6 @@
   </url>
   
   <url>
-    <loc>https://www.iopanic.com/page/about/</loc>
-  </url>
-  
-  <url>
     <loc>https://www.iopanic.com/categories/</loc>
     <priority>0</priority>
   </url>
@@ -105,6 +101,10 @@
     <loc>https://www.iopanic.com/categories/graph-theory/</loc>
     <lastmod>2016-03-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/page/about/</loc>
   </url>
   
   <url>
