@@ -8,7 +8,7 @@ $blue: #3bbfce;
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 strong, b {
@@ -23,7 +23,7 @@ h1 {
   font-size: 2.2em;
   line-height: 1.2em;
   margin-top: 6px;
-  margin-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 h2:first-child {
@@ -132,7 +132,7 @@ button, .cc-btn {
   color: #fff;
   font-weight: normal;
   border: 0;
-  padding: 8px 18px;
+  padding: 12px 18px;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.4s;
   cursor: pointer;
