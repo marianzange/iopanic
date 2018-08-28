@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.42.1" />
+	<meta name="generator" content="Hugo 0.47.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <meta name="author" content="Marian Zange" />
@@ -9,11 +9,10 @@
   <title>Marian Zange &middot; iopanic</title>
   <meta name="description" content="I'm working on evolving collaboration in science and technology. This is my blog where I sometimes write about related topics." />
   
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
-  <link rel="stylesheet" href="https://www.iopanic.com//libraries/normalize.3.0.1.css" />
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-  <link rel="stylesheet" href="https://www.iopanic.com/css/style.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" integrity="sha256-ebN46PPB/s45oUcqLn2SCrgOtYgVJaFiLZ26qVSqI8M=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://www.iopanic.com/css/main.min.7ce26d8152d88cc698f152d6df500f5f2d1450c341e8106c4631d1b135185ea7.css" integrity="sha256-fOJtgVLYjMaY8VLW31APXy0UUMNB6BBsRjHRsTUYXqc=" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js" integrity="sha256-y0EpKQP2vZljM73+b7xY4dvbYQkHRQXuPqRjc7sjvnA=" crossorigin="anonymous"></script>
   <script>
   window.addEventListener("load", function(){
   window.cookieconsent.initialise({
@@ -104,7 +103,7 @@ You might want to adapt the variable names and URL path regex according to your 
     </header>
     <section class="li-article-section">
         This article assumes that you&rsquo;re generally familiar with Docker, Amazon IAM, Travis CI and some basic bash scripting.
-I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn&rsquo;t give you a build environment liek Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.
+I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn&rsquo;t give you a build environment like Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.
     </section>
     <footer>
         <a href='https://www.iopanic.com/post/deploying_to_ecr_from_travis/'>More</a>

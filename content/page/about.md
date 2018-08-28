@@ -1,9 +1,7 @@
 +++
-title = "Hello, I'm Marian."
 layout = "centered"
 +++
-
-<div class="img-profile"></div>
+{{% avatar %}}
 
 I’m a freelance technical consultant and software engineer, focused on complex systems, infrastructure and software engineering operations. Besides this, I'm co-founder of <a href="https://www.5to3.io">5to3</a>, a non-profit dedicated to improving the scientific process and the preservation and safeguarding of research data. With 5to3, I'm researching decentralized protocols that allow elevating classic institutional trust models into trustless and self-governed systems.
 

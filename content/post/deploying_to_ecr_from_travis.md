@@ -1,7 +1,7 @@
 ---
 title: "Building and deploying docker images from Travis to ECR"
 date: "2016-12-22"
-description: "I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn’t give you a build environment liek Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images."
+description: "I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn’t give you a build environment like Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images."
 categories:
   - "Software Engineering"
   - "Devops"
@@ -15,7 +15,7 @@ tags:
 
 <i>This article assumes that you're generally familiar with Docker, Amazon IAM, Travis CI and some basic bash scripting.</i>
 
-I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn't give you a build environment liek Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.
+I used to use Quay as a private registry but found that when heavily relying on AWS just using ECR gets the job done nicely and is a bit cheaper. However, AWS doesn't give you a build environment like Quay does. So you have several options: Setting up your own, pushing images from the developer machine or simply using your already existing CI infrastructure to build and push your images.
 
 For one of my recent projects, I chose to use Travis to push the images to <a href="https://aws.amazon.com/ecr/">ECR</a>. Having a proper CI process in place ensures, that no images are pushed before they pass all the required tests. Since Travis can execute arbitrary scripts, it's quite easy to get it to build and push your image. No need for an extra Docker build environment.
 

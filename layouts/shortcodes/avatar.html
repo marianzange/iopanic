@@ -1,0 +1,4 @@
+{{ $profileImage := resources.Get "images/profile.jpg" | fingerprint }}
+<div class="img-profile">
+  <img src="{{ $profileImage.Permalink }}" integrity="{{ $profileImage.Data.Integrity }}" crossorigin="anonymous" />
+</div>

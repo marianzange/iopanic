@@ -7,14 +7,11 @@
   {{ if .IsHome }}
   <title>Marian Zange &middot; {{ .Site.Title }}</title>
   <meta name="description" content="I'm working on evolving collaboration in science and technology. This is my blog where I sometimes write about related topics." />
-  {{ else }}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-  {{ end }}
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/libraries/normalize.3.0.1.css" />
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  {{ else }}<title>{{ .Title }} &middot; {{ .Site.Title }}</title>{{ end }}{{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" integrity="sha256-ebN46PPB/s45oUcqLn2SCrgOtYgVJaFiLZ26qVSqI8M=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js" integrity="sha256-y0EpKQP2vZljM73+b7xY4dvbYQkHRQXuPqRjc7sjvnA=" crossorigin="anonymous"></script>
   <script>
   window.addEventListener("load", function(){
   window.cookieconsent.initialise({
