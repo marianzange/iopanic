@@ -1,5 +1,5 @@
 +++
-title = "Hello, I'm Marian."
+title = "Marian Zange"
 layout = "centered"
 +++
 {{% avatar %}}
