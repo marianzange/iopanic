@@ -32,6 +32,13 @@ p {
   line-height: 1.5em;
 }
 
+blockquote {
+  border-left: 4px solid #efefef;
+  margin-left: 1.8em;
+  margin-right: 0;
+  padding-left: 10px;
+}
+
 code {
   background-color: #fef1fc;
   font-size: 85%;

@@ -13,8 +13,8 @@ tags:
 
 ## I. Introduction
 
-> ’No Wikipedia article is more than five degrees seperated from the article about Hitler.’
-> – Diana
+> "No Wikipedia article is more than five degrees seperated from the article about Hitler."<br>
+> &mdash; Diana
 
 This hypothesis was mentioned by my friend Diana during lunch at the TUM cafeteria. Remembering the ’Six Degrees of Seperation’ [1] and the ’Bacon Number’ [2], it sparked my interest in finding evidence for or against her statement.
 
