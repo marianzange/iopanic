@@ -95,7 +95,7 @@ p > img {
   border: 6px solid #efefef;
   width: 180px;
    height: 180px;
-   background-image: url('https://avatars0.githubusercontent.com/u/573019?s=460&v=4');
+   background-image: url('https://www.iopanic.com/images/profile.jpg');
    background-size: cover;
    border-radius: 140px;
    -webkit-border-radius: 140px;
@@ -108,6 +108,8 @@ button, .cc-btn {
   font-weight: normal;
   border: 0;
   padding: 8px 18px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.4s;
 }
 
 .cc-theme-classic .cc-btn {
@@ -119,8 +121,6 @@ button:hover, .cc-btn:hover {
   font-weight: normal;
   color: #fff;
   text-decoration: none;
-  -webkit-transition: background-color 0.5s;
-  transition: background-color 0.5s;
 }
 
 .btn-contact {
@@ -247,14 +247,14 @@ button:hover, .cc-btn:hover {
 
 .li-page-header ul li a:active,
 .li-page-header ul li a:hover {
-    color: #CD0070;
+    color: #2d4dd1;
 }
 
 .li-page-header .li-brand a,
 .li-page-header .li-brand a:active,
 .li-page-header .li-brand a:hover,
 .li-page-header .li-brand a:visited {
-    color: #999;
+    color: #949494;
     font-weight: bold;
     font-size: 1.2em;
     line-height: 50px;
@@ -275,14 +275,13 @@ a:visited {
     color: #5890ff;
     font-weight: normal;
     text-decoration: none;
+    -webkit-transition: color 0.3s;
+    transition: color 0.4s;
 }
 
 a:hover {
     color: #2d4dd1;
     font-weight: normal;
-    -webkit-transition: color 0.5s;
-    transition: color 0.5s;
-    text-decoration: underline;
 }
 
 /** Article *****************************************************************/
