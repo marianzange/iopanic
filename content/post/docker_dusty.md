@@ -1,5 +1,5 @@
 ---
-title: "Get your sh*t together: Docker development environments with Dusty"
+title: "Docker development environments with Dusty"
 date: "2016-01-28"
 description: "This article will give you an overview how you can use Docker and Dusty to streamline your dev environments."
 categories:
