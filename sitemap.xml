@@ -63,6 +63,10 @@
   </url>
   
   <url>
+    <loc>https://www.iopanic.com/archives/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.iopanic.com/categories/</loc>
     <priority>0</priority>
   </url>
@@ -104,12 +108,7 @@
   </url>
   
   <url>
-    <loc>https://www.iopanic.com/page/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/page/</loc>
-    <priority>0</priority>
+    <loc>https://www.iopanic.com/about/</loc>
   </url>
   
   <url>
