@@ -12,7 +12,7 @@ menu:
   main:
       - Name: "About"
         Identifier: "about-me"
-        URL: "/page/about/"
+        URL: "/about/"
       - Name: "Keybase"
         Identifier: "keybase"
         URL: "https://keybase.io/iopanic"

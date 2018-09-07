@@ -1,0 +1,23 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<div class="container">
+  {{ range  (where .Site.RegularPages "Type" "post").GroupByDate "2006" }}
+    <div class="row" style="margin: 20px 0;">
+      <h2>{{ .Key }}</h2>
+      {{ range (where .Pages "Type" "post") }}
+      <div class="row archive-list-row">
+        <div class="two columns archive-list-date">
+          <date>{{ .PublishDate.Format "Jan 2" }}</date>
+        </div>
+        <div class="ten columns">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>
+
+{{ partial "footer.html" . }}
+{{ partial "tail.html" . }}

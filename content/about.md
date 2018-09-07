@@ -1,7 +1,9 @@
-+++
-title = "Marian Zange"
-layout = "centered"
-+++
+---
+title: "Marian Zange"
+layout: "centered"
+aliases:
+  - "/page/about"
+---
 {{% avatar %}}
 
 My name is Marian Zange, I’m a software consultant and engineer. My work is mostly focused on complex systems, infrastructure and managing software engineering organizations. Besides this, I'm co-founder of <a href="https://www.5to3.io">5to3</a>, a non-profit dedicated to improving the scientific process and the preservation and safeguarding of research data by bridging the gap between classical institutional trust models and decentralized systems.
