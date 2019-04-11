@@ -6,7 +6,7 @@ aliases:
 ---
 {{% avatar %}}
 
-My name is Marian Zange, I’m a software consultant and engineer. My work is mostly focused on complex systems, infrastructure and managing software engineering organizations. Besides this, I'm co-founder of <a href="https://www.5to3.io">5to3</a>, a non-profit dedicated to improving the scientific process and the preservation and safeguarding of research data by bridging the gap between classical institutional trust models and decentralized systems.
+I'm co-founder and silicon-based technology specialist at <a href="https://www.5to3.io">5to3</a>. 5to3 is a consulting firm and incubator for projects at the intersection of life science and digital technology. Besides this, I help companies with strategic and applied software engineering projects, digital infrastructure and managing software engineering operations. 
 
 Past companies I've co-founded include <a href="http://www.ezeep.com">ezeep</a>, a cloud printing service for education and businesses (acquired by ThinPrint) and <a href="https://angel.co/liquid-labs">Liquid Labs</a>, a formerly Cambridge, MA based startup focused on natural language processing - primarily text summarization and clustering. I've also been involved in a variety of other projects in both, software engineering and consulting roles.
 
