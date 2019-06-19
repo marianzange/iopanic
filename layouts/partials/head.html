@@ -6,7 +6,7 @@
   <meta name="author" content="Marian Zange" />
   {{ if .IsHome }}
   <title>Marian Zange &middot; {{ .Site.Title }}</title>
-  <meta name="description" content="I'm working on evolving collaboration in science and technology. This is my blog where I sometimes write about related topics." />
+  <meta name="description" content="I'm working on democratizing bioscientific advancements and on creating meaningful interactions between organic and digital matter." />
   {{ else }}<title>{{ .Title }} &middot; {{ .Site.Title }}</title>{{ end }}{{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" integrity="sha256-ebN46PPB/s45oUcqLn2SCrgOtYgVJaFiLZ26qVSqI8M=" crossorigin="anonymous" />
