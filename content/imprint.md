@@ -1,6 +1,6 @@
 ---
 title: "Imprint"
-layout: "centered"
+layout: "single"
 aliases:
   - "/page/imprint"
 ---
