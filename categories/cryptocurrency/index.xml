@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cryptocurrency on iopanic</title>
     <link>https://www.iopanic.com/categories/cryptocurrency/</link>
     <description>Recent content in Cryptocurrency on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.iopanic.com/categories/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.iopanic.com/categories/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Signing Coinbase Pro requests with Postman</title>
       <link>https://www.iopanic.com/post/coinbase_pro_hmac_postman/</link>
