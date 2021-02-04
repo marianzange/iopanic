@@ -82,7 +82,7 @@
           <p><strong>According to a friend, a common assumption exists, stating that almost no article on Wikipedia is more than five degrees separated from the article about Adolf Hitler. To verify this assumption, I have analyzed the German Wikipedia and computed the shortest distance between all vertices and the vertex representing the article about Adolf Hitler. The result shows that 97.1% of all articles have a path length of ≤ 5.</strong></p>
 <h2 id="i-introduction">I. Introduction</h2>
 <blockquote>
-<p>&ldquo;No Wikipedia article is more than five degrees seperated from the article about Hitler.&quot;<!-- raw HTML omitted -->
+<p>&ldquo;No Wikipedia article is more than five degrees seperated from the article about Hitler.&quot;<br>
 — Diana</p>
 </blockquote>
 <p>This hypothesis was mentioned by my friend Diana during lunch at the TUM cafeteria. Remembering the ’Six Degrees of Seperation’ [1] and the ’Bacon Number’ [2], it sparked my interest in finding evidence for or against her statement.</p>
@@ -101,14 +101,43 @@ RETURN size(nodes(p)), count(*);
 <h2 id="iii-results">III. Results</h2>
 <p>From the total of 3,169,885 vertices, 97.1% have ℓ ≤ 5 to reach the article about ’Adolf Hitler’. For distribution see the following figures.</p>
 <p><img src="https://www.iopanic.com/images/posts/hops.png" alt="distribution"></p>
-<!-- raw HTML omitted -->
+<table>
+    <tr>
+        <td>Path length &#8467;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td>Vertices V(&#8467;)</td>
+    </tr>
+    <tr>
+        <td>1</td>
+		<td>7,139</td>
+    </tr>
+    <tr>
+        <td>2</td>
+		<td>805,640</td>
+    </tr>
+    <tr>
+        <td>3</td>
+		<td>1,596,007</td>
+    </tr>
+    <tr>
+        <td>4</td>
+		<td>648,934</td>
+    </tr>
+    <tr>
+        <td>5</td>
+		<td>20,357</td>
+    </tr>
+    <tr>
+        <td>6</td>
+		<td>189</td>
+    </tr>
+</table>
 <h2 id="iv-conclusion">IV. Conclusion</h2>
 <p>The resulting numbers show, that 97.1% of German Wikipedia articles are less than 6 hops away from the article about ’Adolf Hitler’. Therefore we can conclude that the stated hypothesis is confirmed and the ’urban myth’ can be considered a fact.</p>
 <p>Further interesting questions around this topic can be certainly asked. Especially since we’re looking at a topic that’s culturally extremely relevant for the community that created and maintains the analyzed Wikipedia corpus, it might be of interest to compare results with Wikipedia editions in other languages.</p>
-<p><!-- raw HTML omitted -->____</p>
-<p>[1] J. Guare, Six Degrees of Separation: A Play, Vintage Books, New York, 1990.<!-- raw HTML omitted -->
+<p><small>____</p>
+<p>[1] J. Guare, Six Degrees of Separation: A Play, Vintage Books, New York, 1990.<br/>
 [2] A. Ruthven, (April 7, 1994). Kevin Bacon is the Center of the Universe. <a href="https://groups.google.com/d/topic/rec.arts.movies/-qNue6RwTn8/discussion">https://groups.google.com/d/topic/rec.arts.movies/-qNue6RwTn8/discussion</a>. Retrieved December 12, 2015.
-<!-- raw HTML omitted --></p>
+</small></p>
 
         </section>
       </article>
