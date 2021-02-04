@@ -6,7 +6,7 @@ aliases:
 ---
 {{% avatar %}}
 
-I help companies with strategic and applied software engineering projects, digital infrastructure and managing software engineering operations. 
+I help companies with strategic and applied software engineering projects, digital infrastructure and managing software engineering operations. If you're interested in working together, let's get in touch!
 
 Past companies I've co-founded include <a href="http://www.ezeep.com">ezeep</a>, a cloud printing service for education and businesses (acquired by ThinPrint) and <a href="https://angel.co/liquid-labs">Liquid Labs</a>, a formerly Cambridge, MA based startup focused on natural language processing - primarily text summarization and clustering. I've also been involved in a variety of other projects in both, software engineering and consulting roles.
 
