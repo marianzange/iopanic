@@ -79,41 +79,26 @@
 
         </header>
         <section>
-          
-
-<p>I&rsquo;ve seen hell, when it comes to software development and actual production environments. Inconsitent platforms, packages and a plethora of hacks to &lsquo;get everything to work&rsquo; on all developer machines. I&rsquo;ve seen whole teams screwing with a shared &lsquo;dev database&rsquo; on a root server somewhere, creating a horrible mess of inconsistent behavior and ultimately slow down development and testing. This article will give you an overview how you can use Docker and Dusty to streamline your dev environments.</p>
-
+          <p>I&rsquo;ve seen hell, when it comes to software development and actual production environments. Inconsitent platforms, packages and a plethora of hacks to &lsquo;get everything to work&rsquo; on all developer machines. I&rsquo;ve seen whole teams screwing with a shared &lsquo;dev database&rsquo; on a root server somewhere, creating a horrible mess of inconsistent behavior and ultimately slow down development and testing. This article will give you an overview how you can use Docker and Dusty to streamline your dev environments.</p>
 <p>In production, we get a similar picture in many companies. A bunch of servers, running somewhere and a whole lot of custom bash scripts doing stuff no one really wants to know. Luckily we live in a world now where everyone has heard of Docker. With docker you can containerize everything and mix and match whatever you need.</p>
-
 <p>The purpose of this post is not to give you an intro to Docker and Dusty, but to basically present you an example dev environment with some useful addons that help you with logging, monitoring and config management. If you don&rsquo;t know about Dusty yet, read their excellent docs at <a href="https://dusty.readthedocs.org">https://dusty.readthedocs.org</a>.</p>
-
 <h2 id="developing-with-docker">Developing with Docker</h2>
-
 <p>Developing with Docker has always been a bit tricky. Sure, there&rsquo;s Docker Compose and you can mount your code from your disk into your container. But it always seemed a bit messy and since there wasn&rsquo;t any clean structure around developing in containerized environments it tended to get messy again.</p>
-
 <p>Fortunately, the great folks at GameChanger came up with Dusty. A neat little tools that makes working with dockerized dev environments fun fun fun. Dusty allows you to configure your whole environment with yaml files (basically like docker compose) but adds useful components and structure to the whole thing. Especially mixing exactly the components you need and decide which code you want to mount into a containers is dead simple with Dusty.</p>
-
 <h2 id="get-started-with-dusty">Get Started with Dusty</h2>
-
 <p>Follow the Dusty install docs and set everything up. Once you&rsquo;ve installed Dusty and all its requirements, run <code>$ dusty setup</code> and follow the prompts. If you want to used my example repository, enter <code>github.com/marianzange/dusty-boilerplate</code> as specs repo.</p>
-
 <p>If you now run <code>$ dusty repos list</code> you should see something like this:</p>
-
 <pre><code>+----------------------------------------------------+-------------------------+----------------+
 |                     Full Name                      |        Short Name       | Local Override |
 +----------------------------------------------------+-------------------------+----------------+
 |      github.com/marianzange/dusty-boilerplate      |    dusty-boilerplate    |                |
 | github.com/marianzange/dusty-boilerplate-flask.git | dusty-boilerplate-flask |                |
 +----------------------------------------------------+-------------------------+----------------+
-</code></pre>
-
-<p>The first repo contains our specs and the second repo our actual app. Now run <code>$ dusty bundles list</code> to see the available bundles.
+</code></pre><p>The first repo contains our specs and the second repo our actual app. Now run <code>$ dusty bundles list</code> to see the available bundles.
 If you want to run everything, activate them with <code>$ dusty bundles activate boilerplate</code> and <code>$ dusty bundles activate devtools</code>.</p>
-
 <p>Well, and now it&rsquo;s time to fire up the whole thing! Run <code>$ dusty up</code> and watch the magic happen. Please note, that it can take ages for the environment to start up when you run
 it for the first time because it will pull all the docker images it needs. Subsequent starts will be super fast though.
 If everything is working, you should see something along these lines:</p>
-
 <pre><code>[...]
 Compiling together the assembled specs
 Compiling the port specs
@@ -136,19 +121,14 @@ Creating dusty_memcached_1...
 Creating dusty_postgres_1...
 Creating dusty_flask_1...
 Your local environment is now started!
-</code></pre>
-
-<p>Now it&rsquo;s time to access your awesome app. Open your browser and go to <a href="http://flask.dusty-boilerplate.io">http://flask.dusty-boilerplate.io</a>.
+</code></pre><p>Now it&rsquo;s time to access your awesome app. Open your browser and go to <a href="http://flask.dusty-boilerplate.io">http://flask.dusty-boilerplate.io</a>.
 You should see an awesome website telling you how awesome Docker and Dusty are. If you&rsquo;re now wondering
 why you can access your local container via dusty-boilerplate.io, it&rsquo;s simple: Dusty runs and nginx
 proxy that automatically proxies all your requests to the correct container. This way you can use
 vanity URLs for local development. I would recommend using a standard compliant domain that&rsquo;s not registered by anyone
 to avoid browser autocorrect etc.</p>
-
 <h2 id="specs-structure">Specs Structure</h2>
-
 <p>To work with Dusty, you need to create a specs repo. Specs are a simple set of yml files specifying how your environment looks like. My example specs repo (<a href="https://github.com/marianzange/dusty-boilerplate">https://github.com/marianzange/dusty-boilerplate</a>) has the following structure:</p>
-
 <pre><code>.
 ├── LICENSE
 ├── apps
@@ -167,21 +147,14 @@ to avoid browser autocorrect etc.</p>
     ├── mysql.yml
     ├── postgres.yml
     └── solr.yml
-</code></pre>
-
-<p>In the example, the app we want to work with is called &lsquo;flask&rsquo;. It&rsquo;s a simple Flask hello world example which is hosted here: <a href="https://github.com/marianzange/dusty-boilerplate-flask">https://github.com/marianzange/dusty-boilerplate-flask</a></p>
-
+</code></pre><p>In the example, the app we want to work with is called &lsquo;flask&rsquo;. It&rsquo;s a simple Flask hello world example which is hosted here: <a href="https://github.com/marianzange/dusty-boilerplate-flask">https://github.com/marianzange/dusty-boilerplate-flask</a></p>
 <h2 id="managing-configurations-with-etcd">Managing Configurations with etcd</h2>
-
 <p>There are many different ways to manage configs. One of my favorite ways is etcd. It&rsquo;s lightweight and you can use it locally and in production the same way.
 Since we&rsquo;re trying to get a fully isolated mix-n-match development environment, our etcd is contained in our Dusty specs as a service.</p>
-
 <p>Additionally we have an app called etcd-browser which allows you to populate your etcd key-value store with whatever settings you need.
 Now we just need our processes to pickup and monitor relavant values from etcd. To do this, I&rsquo;m using etcdenv (<a href="https://github.com/upfluence/etcdenv">https://github.com/upfluence/etcdenv</a>)
 which wraps your process and restarts it automatically if it detects changes to a specific subset of keys on etcd.</p>
-
 <p>If you take a look at my example <code>apps/flask.yml</code>, you&rsquo;ll find the following configuration in the &lsquo;commands&rsquo; section:</p>
-
 <pre><code>commands:
   once:
     - curl -L https://github.com/upfluence/etcdenv/releases/download/v0.3.1/etcdenv-linux-amd64-0.3.1 &gt; /usr/local/bin/etcdenv
@@ -197,38 +170,24 @@ which wraps your process and restarts it automatically if it detects changes to 
       -n /apps/boilerplate/flask \
       -b restart \
       python app.py
-</code></pre>
-
-<p>As you can see, we get a built of etcdenv and write it to the container. Since this is a specific strategy for my development
+</code></pre><p>As you can see, we get a built of etcdenv and write it to the container. Since this is a specific strategy for my development
 enviroment, it wouldn&rsquo;t make sense to embed it in the docker app container. The main command for my container is etcdenv which wraps my app.py.
 Now, whenever I change anything on etcd in the <code>/apps/boilerplate/flask</code> subset, etcdenv will automatically restart the wrapped process.</p>
-
 <p>The nice parts is, you can use a fairly similar strategy to configure your production containers. So you can get pretty close to having
 the same configuration flow both on production and in development.</p>
-
 <p>To add and change values in your etcd, my example repo comes with etcd-browser. Open <a href="http://etcd.dusty-boilerplate.io">http://etcd.dusty-boilerplate.io</a> in your browser and enter <code>http://192.168.99.100:4001</code> in
-the connect field. Now this is not very elegant to be honest. I couldn&rsquo;t find the time to improve it though, so coming up with a better way for editing your etcd data is left as an exercise to the reader.</p>
-
+the connect	field. Now this is not very elegant to be honest. I couldn&rsquo;t find the time to improve it though, so coming up with a better way for editing your etcd data is left as an exercise to the reader.</p>
 <p>All etcd data is persisted, so no need to worry when restarting your etcd container.</p>
-
 <h2 id="logging">Logging</h2>
-
 <p>If you develop an application, you obviously want to have a realtime stream of relavant logs always open. There are multiple ways to do so with Dusty. Either your run <code>$ dusty logs app_name</code> or you can aggregate your docker logs with log.io or another tool.</p>
-
 <p>My boilerplate repo contains a &lsquo;logio&rsquo; and a &lsquo;logio-server&rsquo; app. The first one is a harvester, collecting everything it gets from Docker and the second one is the actual log.io server. If your environment with these apps is up and running, simply head to <a href="http://logs.dusty-boilerplate.io">http://logs.dusty-boilerplate.io</a> and you&rsquo;ll see a beautiful real-time aggregation of logs from your containers.</p>
-
-<p><img src="https://www.iopanic.com/images/posts/docker-logio.jpg" alt="log.io stream" /></p>
-
+<p><img src="https://www.iopanic.com/images/posts/docker-logio.jpg" alt="log.io stream"></p>
 <h2 id="monitoring">Monitoring</h2>
-
 <p>There are many moving parts in a development environment and sometimes you&rsquo;re wondering why your CPU is suddenly feeling the heat.
 To get some quick insights into what going on with your containers, I&rsquo;ve added Google CAdvisor (<a href="https://github.com/google/cadvisor">https://github.com/google/cadvisor</a>) to the toolbox. CAdvisor
 shows you real-time stats about your docker containers and makes it easy to identify high level problems in case a containers goes haywire.</p>
-
 <p>Just open up <a href="http://cadvisor.dusty-boilerplate.io">http://cadvisor.dusty-boilerplate.io</a> and you&rsquo;ll see some pretty graphs:</p>
-
-<p><img src="https://www.iopanic.com/images/posts/cadvisor.jpg" alt="CAdvisor" /></p>
-
+<p><img src="https://www.iopanic.com/images/posts/cadvisor.jpg" alt="CAdvisor"></p>
 <p>I hope you found this article helpful. As I&rsquo;ve mentioned earlier, it was not my intention to give an intro to Docker and Dusty,
 but present some opinionated aspects and additional tools that can help you when working with Docker and Dusty.</p>
 
@@ -253,7 +212,7 @@ but present some opinionated aspects and additional tools that can help you when
     <div class="row">
       <div class="sixteen columns">
         <div class="li-page-footer-legal">
-          &copy 2018 Marian Zange
+          &copy 2018 Marian Zange | <a href="https://www.iopanic.com/imprint">Imprint</a>
         </div>
         <div class="li-page-footer-cc">
 Blog posts are licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>

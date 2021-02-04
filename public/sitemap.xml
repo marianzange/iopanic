@@ -1,9 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.iopanic.com/categories/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/categories/cryptocurrency/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/post/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.iopanic.com/post/coinbase_pro_hmac_postman/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/categories/software-engineering/</loc>
     <lastmod>2018-08-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,12 +38,37 @@
   </url>
   
   <url>
+    <loc>https://www.iopanic.com/categories/devops/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/categories/docker/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.iopanic.com/post/five_hops_to_hitler/</loc>
     <lastmod>2016-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.iopanic.com/categories/graph-theory/</loc>
+    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/categories/research/</loc>
+    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.iopanic.com/post/applied_curiosity/</loc>
+    <lastmod>2016-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/categories/education/</loc>
     <lastmod>2016-02-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,12 +93,22 @@
   </url>
   
   <url>
+    <loc>https://www.iopanic.com/categories/complex-systems/</loc>
+    <lastmod>2013-07-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.iopanic.com/post/shaped_by_algorithms/</loc>
     <lastmod>2013-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.iopanic.com/post/building_teams_from_scratch/</loc>
+    <lastmod>2013-03-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.iopanic.com/categories/startups/</loc>
     <lastmod>2013-03-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -67,78 +127,11 @@
   </url>
   
   <url>
-    <loc>https://www.iopanic.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/complex-systems/</loc>
-    <lastmod>2013-07-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/cryptocurrency/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/devops/</loc>
-    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/docker/</loc>
-    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/education/</loc>
-    <lastmod>2016-02-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/graph-theory/</loc>
-    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.iopanic.com/imprint/</loc>
   </url>
   
   <url>
     <loc>https://www.iopanic.com/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/post/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/research/</loc>
-    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/software-engineering/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/categories/startups/</loc>
-    <lastmod>2013-03-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iopanic.com/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

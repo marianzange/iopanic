@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Complex Systems on iopanic</title>
     <link>https://www.iopanic.com/categories/complex-systems/</link>
     <description>Recent content in Complex Systems on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 Jul 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.iopanic.com/categories/complex-systems/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 18 Jul 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://www.iopanic.com/categories/complex-systems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>You’re Shaped By Algorithms</title>
       <link>https://www.iopanic.com/post/shaped_by_algorithms/</link>

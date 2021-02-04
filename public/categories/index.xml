@@ -1,29 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on iopanic</title>
     <link>https://www.iopanic.com/categories/</link>
     <description>Recent content in Categories on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://www.iopanic.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Complex Systems</title>
-      <link>https://www.iopanic.com/categories/complex-systems/</link>
-      <pubDate>Thu, 18 Jul 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.iopanic.com/categories/complex-systems/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.iopanic.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cryptocurrency</title>
       <link>https://www.iopanic.com/categories/cryptocurrency/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.iopanic.com/categories/cryptocurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Engineering</title>
+      <link>https://www.iopanic.com/categories/software-engineering/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.iopanic.com/categories/software-engineering/</guid>
       <description></description>
     </item>
     
@@ -46,15 +43,6 @@
     </item>
     
     <item>
-      <title>Education</title>
-      <link>https://www.iopanic.com/categories/education/</link>
-      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.iopanic.com/categories/education/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Graph Theory</title>
       <link>https://www.iopanic.com/categories/graph-theory/</link>
       <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
@@ -73,11 +61,20 @@
     </item>
     
     <item>
-      <title>Software Engineering</title>
-      <link>https://www.iopanic.com/categories/software-engineering/</link>
-      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      <title>Education</title>
+      <link>https://www.iopanic.com/categories/education/</link>
+      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://www.iopanic.com/categories/software-engineering/</guid>
+      <guid>https://www.iopanic.com/categories/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Complex Systems</title>
+      <link>https://www.iopanic.com/categories/complex-systems/</link>
+      <pubDate>Thu, 18 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.iopanic.com/categories/complex-systems/</guid>
       <description></description>
     </item>
     

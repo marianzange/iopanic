@@ -1,22 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graph Theory on iopanic</title>
     <link>https://www.iopanic.com/categories/graph-theory/</link>
     <description>Recent content in Graph Theory on iopanic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 15 Mar 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.iopanic.com/categories/graph-theory/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 15 Mar 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://www.iopanic.com/categories/graph-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Five Hops To Hitler</title>
       <link>https://www.iopanic.com/post/five_hops_to_hitler/</link>
       <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.iopanic.com/post/five_hops_to_hitler/</guid>
-      <description>According to a friend, a common assumption exists, stating that almost no article on Wikipedia is more than five degrees separated from the article about Adolf Hitler. To verify this assumption, I have analyzed the German Wikipedia and computed the shortest distance between all vertices and the vertex representing the article about Adolf Hitler. The result shows that 97.1% of all articles have a path length of ≤ 5.</description>
+      <description>According to a friend, a common assumption exists, stating that almost no article on Wikipedia is more than five degrees separated from the article about Adolf Hitler. To verify this assumption, I have analyzed the German Wikipedia and computed the shortest distance between all vertices and the vertex representing the article about Adolf Hitler. The result shows that 97.1% of all articles have a path length of ≤ 5.
+I. Introduction  &amp;ldquo;No Wikipedia article is more than five degrees seperated from the article about Hitler.</description>
     </item>
     
   </channel>
