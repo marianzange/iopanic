@@ -8,6 +8,10 @@ publishdir: "public"
 indexes:
   category: "categories"
 baseurl: "https://www.iopanic.com/"
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 menu:
   main:
       - Name: "About"
